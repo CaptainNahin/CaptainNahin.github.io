@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Mahi Al Nahin (CaptainNahin) — Systems Architect, AI Engineer &amp; Quant Developer</title>
+  <meta name="description" content="Flagship portfolio of Mahi Al Nahin (Nahin) — 14-year-old Systems Architect, AI Automation Engineer, Quantitative Developer (AuraQuant v5 APEX), Bio-Computing Researcher, and Founder of PrimeNself Studio in Gangni, Meherpur, Bangladesh." />
+  <meta name="author" content="Mahi Al Nahin (CaptainNahin)" />
+  <meta property="og:title" content="Mahi Al Nahin — Autonomous AI Systems, Quant Algorithms &amp; Cloud Architectures at 14" />
+  <meta property="og:description" content="From engineering a 32-core Google Cloud &amp; Termux Linux cluster on an Android phone to building AuraQuant v5 APEX, AuroraOS, and PrimeNself Studio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://captainnahin.github.io/" />
+  <meta name="theme-color" content="#07090E" />
+
+  <!-- Google Fonts with instant system fallback for offline mode -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-obsidian: #07090E;
+      --bg-elevated: #0C101A;
+      --bg-glass: rgba(14, 19, 32, 0.72);
+      --bg-glass-strong: rgba(11, 15, 26, 0.90);
+      --border-subtle: rgba(148, 163, 184, 0.14);
+      --border-highlight: rgba(56, 189, 248, 0.45);
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --accent-primary: #38BDF8;
+      --accent-secondary: #10B981;
+      --accent-tertiary: #8B5CF6;
+      --accent-gold: #F59E0B;
+      --accent-rose: #F43F5E;
+      --glow-primary: rgba(56, 189, 248, 0.18);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    body[data-mode="stem"] {
+      --accent-primary: #A78BFA;
+      --accent-secondary: #38BDF8;
+      --accent-tertiary: #F59E0B;
+      --border-highlight: rgba(167, 139, 250, 0.48);
+      --glow-primary: rgba(167, 139, 250, 0.20);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background-color: var(--bg-obsidian);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-obsidian);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.6;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Background Neural Canvas & Grid Overlay */
+    #neural-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.75;
+    }
+
+    .cyber-grid-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(circle at 50% 25%, black 30%, transparent 85%);
+      -webkit-mask-image: radial-gradient(circle at 50% 25%, black 30%, transparent 85%);
+    }
+
+    /* Layout Container */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Sticky Top Navigation & Mode Switcher */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7, 9, 14, 0.84);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.25s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      flex-wrap: wrap;
+    }
+
+    .brand-cluster {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-monogram {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: #07090E;
+      box-shadow: 0 0 20px var(--glow-primary);
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.98rem;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-primary);
+    }
+
+    /* Interactive Dual-Mode Switcher Pill */
+    .mode-switcher {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-highlight);
+      border-radius: 999px;
+      padding: 0.22rem;
+      gap: 0.2rem;
+      box-shadow: 0 0 24px var(--glow-primary);
+    }
+
+    .mode-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.42rem 0.85rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+    }
+
+    .mode-btn.active {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      color: #050811;
+      font-weight: 700;
+      box-shadow: 0 2px 12px var(--glow-primary);
+    }
+
+    /* Typography & Section Headers */
+    section {
+      padding: 4.5rem 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-primary);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid var(--border-highlight);
+      padding: 0.32rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-desc {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 760px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Glass Cards */
+    .glass-card {
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 1.6rem;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card:hover {
+      border-color: var(--border-highlight);
+      box-shadow: 0 12px 36px -10px var(--glow-primary);
+      transform: translateY(-2px);
+    }
+
+    .glass-card.featured {
+      border-color: var(--border-highlight);
+      background: linear-gradient(160deg, rgba(15, 23, 42, 0.88) 0%, rgba(12, 16, 28, 0.92) 100%);
+    }
+
+    /* Mode-Dynamic Highlight Banner */
+    .mode-banner {
+      margin-top: 1.25rem;
+      padding: 0.9rem 1.25rem;
+      border-radius: 12px;
+      background: linear-gradient(90deg, rgba(56, 189, 248, 0.12), rgba(16, 185, 129, 0.08), rgba(139, 92, 246, 0.12));
+      border: 1px solid var(--border-highlight);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.86rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 3.2rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: #10B981;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 0.42rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 10px #10B981;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.55; }
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.4vw, 3.55rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+      margin-bottom: 1.25rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 0%, var(--accent-primary) 55%, var(--accent-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-lead {
+      font-size: 1.04rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.65rem;
+      max-width: 680px;
+    }
+
+    .hero-lead strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.82rem 1.35rem;
+      border-radius: 12px;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      color: #04070E;
+      font-weight: 700;
+      box-shadow: 0 8px 25px var(--glow-primary);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-primary);
+      border-color: var(--border-highlight);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(30, 41, 59, 0.95);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: rgba(148, 163, 184, 0.08);
+      color: var(--text-secondary);
+      border-color: var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 0.65rem 1rem;
+    }
+
+    .btn-ghost:hover {
+      color: var(--text-primary);
+      border-color: var(--accent-primary);
+    }
+
+    /* Hero KPI Strip */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+    }
+
+    .kpi-box {
+      background: rgba(12, 16, 26, 0.8);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 0.85rem;
+    }
+
+    .kpi-val {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+      line-height: 1.1;
+    }
+
+    .kpi-label {
+      font-size: 0.73rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+      font-family: var(--font-mono);
+    }
+
+    /* Terminal Command Center Widget */
+    .terminal-window {
+      background: #05070B;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+    }
+
+    .terminal-header {
+      background: #0D121F;
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .terminal-title {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+    }
+
+    .terminal-body {
+      padding: 1.15rem;
+      font-family: var(--font-mono);
+      font-size: 0.77rem;
+      line-height: 1.65;
+      color: #E2E8F0;
+      flex: 1;
+      overflow-x: auto;
+    }
+
+    .cmd-prompt { color: #10B981; font-weight: 600; }
+    .cmd-arg { color: #38BDF8; }
+    .cmd-comment { color: #64748B; font-style: italic; }
+    .cmd-out { color: #CBD5E1; display: block; margin-bottom: 0.55rem; }
+    .cmd-highlight { color: #F59E0B; font-weight: 600; }
+
+    .terminal-tabs {
+      display: flex;
+      border-top: 1px solid var(--border-subtle);
+      background: #090D16;
+    }
+
+    .term-tab {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 0.71rem;
+      padding: 0.6rem 0.4rem;
+      cursor: pointer;
+      border-right: 1px solid var(--border-subtle);
+      transition: all 0.2s;
+    }
+
+    .term-tab:last-child { border-right: none; }
+    .term-tab.active {
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--accent-primary);
+      font-weight: 600;
+    }
+
+    /* Resilience Story Banner */
+    .resilience-card {
+      margin-top: 2rem;
+      background: linear-gradient(135deg, rgba(14, 21, 38, 0.92), rgba(9, 13, 24, 0.95));
+      border: 1px solid var(--border-highlight);
+      border-radius: 16px;
+      padding: 1.75rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .arch-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+    }
+
+    .arch-node {
+      background: rgba(7, 9, 14, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--accent-primary);
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Tags & Pills */
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.26rem 0.65rem;
+      border-radius: 6px;
+      background: rgba(148, 163, 184, 0.1);
+      color: var(--text-primary);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .tag.accent {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-primary);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .tag.emerald {
+      background: rgba(16, 185, 129, 0.12);
+      color: #34D399;
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .tag.violet {
+      background: rgba(139, 92, 246, 0.14);
+      color: #C4B5FD;
+      border-color: rgba(139, 92, 246, 0.32);
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.35rem;
+    }
+
+    /* Code Preview Snippet inside Case Studies */
+    .code-block {
+      background: #05070C;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 10px;
+      padding: 0.9rem;
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      color: #CBD5E1;
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.55;
+    }
+
+    /* Filter Buttons */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2.5rem 0 1.25rem;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      border-color: var(--accent-primary);
+      color: var(--text-primary);
+      background: rgba(56, 189, 248, 0.14);
+    }
+
+    /* Pricing / Agency Cards */
+    .price-tag {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0.6rem 0;
+    }
+
+    .price-tag span {
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 1.1rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--accent-secondary);
+      font-family: var(--font-mono);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* Interactive Bio-Computing HD-MEA Lab */
+    .mea-simulator {
+      background: #050811;
+      border: 1px solid var(--border-highlight);
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+
+    #mea-canvas {
+      width: 100%;
+      height: 230px;
+      background: #030509;
+      border-radius: 10px;
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      cursor: crosshair;
+      display: block;
+    }
+
+    /* HollowNbeats Audio Synthesizer Card */
+    .audio-visualizer-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      height: 46px;
+      padding: 0.5rem;
+      background: rgba(5, 8, 15, 0.85);
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      margin: 0.85rem 0;
+    }
+
+    .viz-bar {
+      flex: 1;
+      background: linear-gradient(to top, var(--accent-primary), var(--accent-tertiary));
+      height: 20%;
+      border-radius: 2px;
+      transition: height 0.12s ease;
+    }
+
+    /* Stat Comparison Bars (Messi vs Ronaldo) */
+    .stat-compare-row {
+      margin-bottom: 0.85rem;
+    }
+
+    .stat-compare-header {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-dual-bar {
+      display: flex;
+      height: 8px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #0B101B;
+      gap: 2px;
+    }
+
+    /* Executive Print Dossier Preview & @media print */
+    #executive-print-dossier {
+      display: none;
+      background: #FFFFFF;
+      color: #0F172A;
+      padding: 2.2rem;
+      border-radius: 16px;
+      margin-top: 2rem;
+      border: 2px solid var(--accent-primary);
+      font-family: 'Inter', Georgia, serif;
+    }
+
+    #executive-print-dossier.visible-preview {
+      display: block;
+    }
+
+    .dossier-header {
+      border-bottom: 2px solid #0F172A;
+      padding-bottom: 0.85rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .dossier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+
+    .dossier-section-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      color: #1E293B;
+      border-bottom: 1px solid #CBD5E1;
+      padding-bottom: 0.25rem;
+      margin: 0.85rem 0 0.45rem;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 6, 12, 0.82);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #0B101C;
+      border: 1px solid var(--border-highlight);
+      border-radius: 16px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 1.75rem;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: #060911;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      padding: 0.75rem 0.9rem;
+      border-radius: 10px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      margin-top: 0.35rem;
+      margin-bottom: 0.95rem;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 980px) {
+      .hero-grid, .resilience-card, .grid-2, .grid-3, .dossier-grid {
+        grid-template-columns: 1fr;
+      }
+      .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* PRINT STYLESHEET FOR 1-PAGE HAILEYBURY BHALUKA & CLIENT EXECUTIVE SUMMARY PDF */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm;
+      }
+      body {
+        background: #FFFFFF !important;
+        color: #0F172A !important;
+        font-size: 9.5pt !important;
+        line-height: 1.38 !important;
+      }
+      #neural-canvas,
+      .cyber-grid-overlay,
+      .top-nav,
+      .hero-section,
+      #case-studies,
+      #agency,
+      #research,
+      #beyond-terminal,
+      .no-print,
+      footer {
+        display: none !important;
+      }
+      #contact {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      #executive-print-dossier {
+        display: block !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+      }
+      .dossier-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 14px !important;
+      }
+    }
+  </style>
+</head>
+<body data-mode="client">
+
+  <!-- Interactive Three/Canvas Neural Network Particle Background -->
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
+  <div class="cyber-grid-overlay" aria-hidden="true"></div>
+
+  <!-- Sticky Top Command Header & Dual-Mode Switcher -->
+  <header class="top-nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand-cluster">
+        <div class="brand-monogram">MN</div>
+        <div>
+          <span class="brand-title">Mahi Al Nahin</span>
+          <span class="brand-sub">@CaptainNahin // Gangni, BD</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#resilience">Origin</a></li>
+        <li><a href="#case-studies">Flagship Systems</a></li>
+        <li><a href="#github-live">Live GitHub</a></li>
+        <li><a href="#agency">PrimeNself Studio</a></li>
+        <li><a href="#research">Bio-Computing &amp; STEM</a></li>
+        <li><a href="#beyond-terminal">Polymath</a></li>
+        <li><a href="#contact">1-Page Dossier</a></li>
+      </ul>
+
+      <!-- (2) INTERACTIVE DUAL-MODE SWITCHER -->
+      <div class="mode-switcher" role="group" aria-label="Portfolio Evaluation Mode Switcher">
+        <button type="button" class="mode-btn active" id="btn-mode-client" onclick="switchPortfolioMode('client')">
+          <span>⚡ B2B Client &amp; Agency Mode</span>
+        </button>
+        <button type="button" class="mode-btn" id="btn-mode-stem" onclick="switchPortfolioMode('stem')">
+          <span>🎓 Admissions &amp; STEM Board Mode</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- (1) HERO COMMAND CENTER -->
+    <section class="hero-section">
+      <div class="container">
+
+        <!-- Dynamic Mode Context Banner -->
+        <div class="mode-banner" id="mode-context-banner">
+          <div>
+            <strong style="color: var(--accent-primary); font-family: var(--font-mono);" id="mode-banner-tag">[ACTIVE VIEW: INTERNATIONAL B2B CLIENT &amp; AGENCY MODE]</strong>
+            <span id="mode-banner-text" style="color: var(--text-secondary); margin-left: 0.45rem;">
+              Highlighting $500–$2,500 48-hour web redesigns, Google Omni + Veo 3.1 autonomous outreach pipelines, and creator Notion/Sheets ecosystems.
+            </span>
+          </div>
+          <button type="button" class="btn-ghost" style="border-radius:8px; cursor:pointer;" onclick="togglePortfolioMode()">
+            Switch to <span id="mode-switch-hint">Haileybury Bhaluka &amp; STEM Evaluator View →</span>
+          </button>
+        </div>
+
+        <div class="hero-grid" style="margin-top: 1.75rem;">
+          <!-- Left Column: Headline, Narrative, CTAs, KPIs -->
+          <div>
+            <div class="status-badge">
+              <span class="pulse-dot"></span>
+              <span>Operating from Gangni, BD // Cloud Cluster Active (quantedge-worker-prod • 32 vCPU)</span>
+            </div>
+
+            <h1 class="hero-headline">
+              Mahi Al Nahin — <span class="gradient-text">Building Autonomous AI Systems, Quant Algorithms &amp; Cloud Architectures at 14</span>
+            </h1>
+
+            <p class="hero-lead" id="hero-lead-copy">
+              Systems Architect, AI Automation Engineer, Quantitative Developer, and Founder of <strong>PrimeNself Studio</strong> &amp; <strong>Antigravity Creator Studio</strong> in Gangni, Meherpur, Bangladesh. When my laptop was stolen, I turned an Android phone into a Termux Linux command center linked to <strong>32-core Google Cloud build nodes</strong>—shipping production multi-agent software, algorithmic trading engines, and wetware bio-computing research.
+            </p>
+
+            <div class="cta-row">
+              <a href="#agency" class="btn btn-primary" id="primary-hero-cta">
+                <span>⚡ Hire PrimeNself Studio ($500 Web/AI Builds)</span>
+              </a>
+              <a href="#research" class="btn btn-secondary" id="secondary-hero-cta" onclick="switchPortfolioMode('stem')">
+                <span>🎓 View STEM &amp; Academic Scholarship Dossier</span>
+              </a>
+              <button type="button" class="btn btn-ghost" onclick="triggerPrintDossier()">
+                <span>🖨️ 1-Page Executive PDF View</span>
+              </button>
+            </div>
+
+            <div class="kpi-grid">
+              <div class="kpi-box">
+                <div class="kpi-val" id="kpi-1-val">32-Core</div>
+                <div class="kpi-label" id="kpi-1-lbl">GCP Cloud Build Cluster</div>
+              </div>
+              <div class="kpi-box">
+                <div class="kpi-val" id="kpi-2-val">48 Hrs</div>
+                <div class="kpi-label" id="kpi-2-lbl">$500 B2B Web Turnaround</div>
+              </div>
+              <div class="kpi-box">
+                <div class="kpi-val" id="kpi-3-val">v5 APEX</div>
+                <div class="kpi-label" id="kpi-3-lbl">AuraQuant &amp; QuantEdge</div>
+              </div>
+              <div class="kpi-box">
+                <div class="kpi-val" id="kpi-4-val" data-gh-total-stars>11★ / 5</div>
+                <div class="kpi-label" id="kpi-4-lbl">Live GitHub Stars / Repos</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Interactive Terminal Telemetry -->
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="terminal-dot" style="background:#F43F5E;"></span>
+                <span class="terminal-dot" style="background:#F59E0B;"></span>
+                <span class="terminal-dot" style="background:#10B981;"></span>
+              </div>
+              <span class="terminal-title">nahin@termux-arm64:~/cloud-bridge (zsh)</span>
+              <span style="font-family:var(--font-mono); font-size:0.68rem; color:#10B981;">● ONLINE</span>
+            </div>
+
+            <div class="terminal-body" id="terminal-screen">
+              <!-- Populated dynamically via JS tabs -->
+            </div>
+
+            <div class="terminal-tabs">
+              <button type="button" class="term-tab active" onclick="setTerminalTab('cluster', this)">01 // Cloud Cluster</button>
+              <button type="button" class="term-tab" onclick="setTerminalTab('quant', this)">02 // AuraQuant v5</button>
+              <button type="button" class="term-tab" onclick="setTerminalTab('b2b', this)">03 // PrimeNself AI</button>
+              <button type="button" class="term-tab" onclick="setTerminalTab('biocomp', this)">04 // Bio-Compute</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- (2A) IDENTITY & RESILIENCE STORY: STOLEN LAPTOP -> ANDROID TERMUX + 32-CORE CLOUD CLUSTER -->
+        <div class="resilience-card" id="resilience">
+          <div>
+            <div class="section-eyebrow" style="margin-bottom:0.65rem;">Resilience &amp; Distributed Systems Architecture</div>
+            <h2 style="font-family:var(--font-display); font-size:1.55rem; font-weight:700; margin-bottom:0.65rem;">
+              "My Laptop Was Stolen in Gangni. So I Re-Engineered My Entire Workflow Inside Android Termux + 32-Core Google Cloud Nodes."
+            </h2>
+            <p style="color:var(--text-secondary); font-size:0.93rem; margin-bottom:0.9rem;">
+              Growing up in <strong>Gangni, Meherpur, Bangladesh</strong>, losing my primary laptop at age 14 could have ended my engineering trajectory. Instead, I treated hardware scarcity as a systems architecture problem: I built a full Linux development environment inside <strong>Termux (`aarch64`)</strong> on an Android phone, bridged it via SSH and `gcloud` to <strong>32-vCPU Google Cloud Build workers (`E2_HIGHCPU_32` on `quantedge-worker-prod`)</strong>, and orchestrated autonomous coding &amp; operations agents (<strong>Antigravity CLI, OpenCode, Claude Code, Codex, and Composio MCP servers</strong>) to compile, render, and deploy production systems globally.
+            </p>
+            <div class="tag-row">
+              <span class="tag accent">Termux Linux (ARM64)</span>
+              <span class="tag emerald">GCP E2_HIGHCPU_32 Workers</span>
+              <span class="tag violet">Antigravity CLI &amp; OpenCode</span>
+              <span class="tag">Claude Code &amp; Codex</span>
+              <span class="tag">Composio MCP v3</span>
+              <span class="tag">Veo 3.1 &amp; Gemini Omni</span>
+            </div>
+          </div>
+
+          <div class="arch-flow">
+            <div class="arch-node">
+              <span><strong>[01] Edge Node:</strong> Android Termux Linux + Wakelock Guardian</span>
+              <span style="color:#10B981;">LOCAL HOST</span>
+            </div>
+            <div class="arch-node" style="border-left-color: var(--accent-tertiary);">
+              <span><strong>[02] Agent Swarm:</strong> Antigravity + Claude Code + OpenCode + MCP</span>
+              <span style="color:#C4B5FD;">ORCHESTRATOR</span>
+            </div>
+            <div class="arch-node" style="border-left-color: var(--accent-secondary);">
+              <span><strong>[03] Compute Fabric:</strong> GCP <code>quantedge-worker-prod</code> (32 vCPU)</span>
+              <span style="color:#34D399;">CLOUD BUILD</span>
+            </div>
+            <div class="arch-node" style="border-left-color: var(--accent-gold);">
+              <span><strong>[04] Production Targets:</strong> Vercel + Supabase + TradingView + GCS</span>
+              <span style="color:#FBBF24;">LIVE DEPLOY</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- (3) FLAGSHIP ENGINEERING CASE STUDIES & LIVE GITHUB GRID -->
+    <section id="case-studies">
+      <div class="container">
+        <div class="section-eyebrow">01 // Flagship Engineering Case Studies</div>
+        <h2 class="section-title">Production Systems Across Quant Finance, OS Design, Cloud Media &amp; B2B AI</h2>
+        <p class="section-desc">
+          Every project below is backed by real code, deterministic verification suites, and production cloud deployments orchestrated from Gangni, Bangladesh.
+        </p>
+
+        <div class="grid-2" id="flagship-cards-grid">
+
+          <!-- Case Study 1: AuraQuant v5 APEX & QuantEdge -->
+          <article class="glass-card featured" data-focus="both">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.6rem;">
+              <span class="tag accent">QUANTITATIVE FINANCE // PINE SCRIPT v5 &amp; PYTHON</span>
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:#10B981;">★ Live on TradingView &amp; Vercel</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.38rem; font-weight:700; margin-bottom:0.5rem;">
+              AuraQuant v5 APEX &amp; QuantEdge Live Market Gateway
+            </h3>
+            <p style="color:var(--text-secondary); font-size:0.9rem;">
+              Engineered <strong>AuraQuant v5 APEX</strong> on TradingView—an institutional-grade Pine Script v5 algorithmic indicator featuring multi-timeframe EMA/RSI momentum vectors, <strong>Choppiness Index &amp; ADX anti-chop consolidation filters</strong>, and dynamic ATR profit-locking trailing stop-loss ratchets. Paired with <strong>QuantEdge (`Trading-bot`)</strong>: a Python/FastAPI deterministic market gateway on Vercel + Supabase that enforces closed-candle zero-repainting rules and diagnoses every historical loss to self-improve risk rules.
+            </p>
+
+            <div class="code-block">// AuraQuant v5 APEX — Anti-Chop Regime Filter &amp; Dynamic Profit-Locking Stop
+chopIndex = 100 * math.log10(math.sum(ta.atr(1), 14) / (ta.highest(14) - ta.lowest(14))) / math.log10(14)
+isTrendingRegime = chopIndex &lt; 38.2 and adxValue &gt; 22.0
+dynamicTrailStop = strategy.position_avg_price + (rMultiple &gt;= 1.5 ? atrVal * 0.85 : -atrVal * 1.4)</div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-top:1rem;">
+              <div class="tag-row" style="margin-top:0;">
+                <span class="tag">Pine Script v5</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Zero-Repaint Gate</span>
+                <span class="tag">Supabase</span>
+              </div>
+              <div style="display:flex; gap:0.5rem;">
+                <a href="https://trading-bot-six-kohl.vercel.app" target="_blank" rel="noopener" class="btn-ghost" style="border-radius:8px; text-decoration:none;">Live Gateway ↗</a>
+                <a href="https://github.com/CaptainNahin/Trading-bot" target="_blank" rel="noopener" class="btn-ghost" style="border-radius:8px; text-decoration:none;">GitHub (4★) ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 2: AuroraOS & Small Language Model (SLM) Tuning -->
+          <article class="glass-card featured" data-focus="stem">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.6rem;">
+              <span class="tag violet">SYSTEMS ARCHITECTURE // OS &amp; SLM OPTIMIZATION</span>
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:#C4B5FD;">★ 5 GitHub Stars</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.38rem; font-weight:700; margin-bottom:0.5rem;">
+              AuroraOS Desktop Environment &amp; Small Language Model (SLM) Fine-Tuning
+            </h3>
+            <p style="color:var(--text-secondary); font-size:0.9rem;">
+              Built <strong>AuroraOS</strong>—a lightweight, glassmorphic operating environment in TypeScript &amp; Node.js featuring virtual workspace compositing, a sandboxed virtual filesystem (VFS), process isolation, built-in developer utilities, and an active roadmap toward a bare-metal Linux distribution. Complemented by research into <strong>Small Language Model (SLM)</strong> instruction tuning (LoRA/QLoRA 4-bit quantization) for low-latency reasoning on constrained edge hardware.
+            </p>
+
+            <div class="code-block">// AuroraOS Virtual Filesystem (VFS) Sandboxed Inode Dispatcher &amp; SLM IPC Bridge
+export class SandboxVFS {
+  async mountWorkspace(ns: string, quotaBytes = 64 * 1024 * 1024): Promise&lt;VFSHandle&gt; {
+    return this.inodeTable.allocateIsolatedNamespace(ns, { permissions: 0o750, quotaBytes });
+  }
+}</div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-top:1rem;">
+              <div class="tag-row" style="margin-top:0;">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Sandboxed VFS</span>
+                <span class="tag">SLM QLoRA</span>
+                <span class="tag">Linux Kernel Roadmap</span>
+              </div>
+              <a href="https://github.com/CaptainNahin/AuroraOS" target="_blank" rel="noopener" class="btn-ghost" style="border-radius:8px; text-decoration:none;">Explore AuroraOS (5★) ↗</a>
+            </div>
+          </article>
+
+          <!-- Case Study 3: Cloud-Native 3D Blender & Remotion Media Pipeline -->
+          <article class="glass-card" data-focus="both">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.6rem;">
+              <span class="tag emerald">CLOUD INFRASTRUCTURE // 32-CORE GCP &amp; VEO 3.1</span>
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:#34D399;">quantedge-worker-prod</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.38rem; font-weight:700; margin-bottom:0.5rem;">
+              Cloud-Native 3D Blender, Remotion &amp; Veo 3.1 Media Pipeline
+            </h3>
+            <p style="color:var(--text-secondary); font-size:0.9rem;">
+              Engineered automated Node.js &amp; Python media rendering pipelines (<code>last_boy_3d_studio</code> &amp; <code>minecraft_remotion_studio</code>) that compile 80-to-100-scene JSON narrative graphs into full 20-minute 1080p episodes (572 MB master outputs). Dispatched from Termux to <strong>Google Cloud Build <code>E2_HIGHCPU_32</code></strong> Docker containers running 16-worker parallel Remotion &amp; headless Blender 3D rendering, Gemini TTS/SFX synthesis, and Veo 3.1 video generation.
+            </p>
+
+            <div class="code-block"># cloudbuild.yaml — 32-vCPU Distributed Blender &amp; 16-Way Parallel Remotion Pipeline
+options: { machineType: 'E2_HIGHCPU_32', diskSizeGb: 100 }
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['run', '--rm', '--shm-size=8g', 'minecraft-remotion-renderer', 'python3', 'render_parallel_16.py']</div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-top:1rem;">
+              <div class="tag-row" style="margin-top:0;">
+                <span class="tag">GCP Cloud Build (32-vCPU)</span>
+                <span class="tag">Blender Python API</span>
+                <span class="tag">Remotion</span>
+                <span class="tag">Gemini &amp; Veo 3.1</span>
+              </div>
+              <button type="button" class="btn-ghost" style="border-radius:8px; cursor:pointer;" onclick="setTerminalTab('cluster', document.querySelectorAll('.term-tab')[0]); document.getElementById('terminal-screen').scrollIntoView({behavior:'smooth'});">Inspect Pipeline Logs ↑</button>
+            </div>
+          </article>
+
+          <!-- Case Study 4: PrimeNself B2B Automation Engine & DocNworld -->
+          <article class="glass-card" data-focus="client">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.6rem;">
+              <span class="tag accent">B2B AI AUTOMATION &amp; TELEMEDICINE // COMPOSIO MCP</span>
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-primary);">PrimeNself &amp; DocNworld</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.38rem; font-weight:700; margin-bottom:0.5rem;">
+              PrimeNself B2B Autonomous Outreach Engine &amp; DocNworld AI
+            </h3>
+            <p style="color:var(--text-secondary); font-size:0.9rem;">
+              Architected an end-to-end B2B client acquisition engine (<code>omni_brain.py</code>, <code>outreach_engine.py</code>, <code>site_auditor.py</code>) that audits clinic &amp; contractor websites in Tier-1 cities, synthesizes 8-second personalized <strong>Veo 3.1 commercial previews</strong>, and executes <strong>Google Omni</strong> behavioral psychology outreach (Kahneman Loss Aversion + Chris Voss micro-commitments) via Composio MCP. Also built <strong>DocNworld</strong>—an AI telemedicine triage &amp; video consultation platform.
+            </p>
+
+            <div class="code-block"># omni_brain.py — Behavioral Psychology Pitch + 8s Veo 3.1 Commercial Generator
+pitch = omni_negotiator.synthesize(
+    psych_angle="Kahneman_Loss_Aversion + Voss_No_Oriented_CTA",
+    veo_8s_prompt=f"Cinematic 8s commercial for {lead.business_name} in {lead.city}",
+    offer="$500 flat 48-hr Next.js build | $0 upfront | $250 deposit after preview"
+)</div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-top:1rem;">
+              <div class="tag-row" style="margin-top:0;">
+                <span class="tag">Google Omni 1.1</span>
+                <span class="tag">Composio MCP</span>
+                <span class="tag">Next.js + Tailwind</span>
+                <span class="tag">DocNworld Telemedicine</span>
+              </div>
+              <a href="https://github.com/CaptainNahin/DocNworld" target="_blank" rel="noopener" class="btn-ghost" style="border-radius:8px; text-decoration:none;">DocNworld Repo ↗</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- LIVE GITHUB REPOSITORY DISCOVERY GRID -->
+        <div id="github-live" style="margin-top: 3.5rem;">
+          <div class="filter-bar">
+            <div>
+              <div class="section-eyebrow" style="margin-bottom:0.4rem;">Live GitHub Telemetry // api.github.com/users/CaptainNahin/repos</div>
+              <h3 style="font-family:var(--font-display); font-size:1.5rem; font-weight:700;">
+                Verified Public Repositories (<span id="gh-repo-count">5</span> Active • <span id="gh-star-count">11</span> Total ★)
+              </h3>
+            </div>
+
+            <div class="filter-group" role="group" aria-label="Filter GitHub repositories by language">
+              <button type="button" class="filter-btn active" onclick="filterGithubRepos('ALL', this)">All Repos</button>
+              <button type="button" class="filter-btn" onclick="filterGithubRepos('Python', this)">Python</button>
+              <button type="button" class="filter-btn" onclick="filterGithubRepos('TypeScript', this)">TypeScript / OS</button>
+              <button type="button" class="filter-btn" onclick="filterGithubRepos('HTML', this)">Web / HTML</button>
+            </div>
+          </div>
+
+          <div class="grid-3" id="github-repos-container">
+            <!-- Populated immediately by pre-seeded real GitHub API snapshot + live fetch refresh -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- (4) PRIMENSELF STUDIO & AGENCY SERVICES -->
+    <section id="agency" style="background: linear-gradient(180deg, rgba(12, 16, 26, 0.55) 0%, rgba(7, 9, 14, 0) 100%); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-eyebrow">02 // PrimeNself Studio &amp; Antigravity Creator Studio</div>
+        <h2 class="section-title">High-Converting B2B Web Systems, AI Agent Pipelines &amp; Creator Ecosystems</h2>
+        <p class="section-desc">
+          Built for dental/medical clinics, high-ticket home-service contractors, and digital creators who want measurable revenue velocity—backed by our <strong>Zero-Risk Preview Guarantee ($0 upfront to test your live preview)</strong>.
+        </p>
+
+        <div class="grid-3">
+          <!-- Package 1: PrimeNself $500 48-Hour Web Redesign -->
+          <div class="glass-card featured">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="tag emerald">MOST POPULAR // 48-HR TURNAROUND</span>
+              <span style="font-family:var(--font-mono); font-size:0.74rem; color:#34D399;">Zero Upfront Risk</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; margin-top:0.75rem;">
+              48-Hour High-Speed B2B Web Redesign
+            </h3>
+            <div class="price-tag">$500 <span>/ flat build ($250 deposit after preview)</span></div>
+            <p style="color:var(--text-secondary); font-size:0.86rem;">
+              Engineered for high-ticket clinics (med-spas, dental, orthodontics) and elite contractors losing $2,000+ leads to slow mobile sites.
+            </p>
+            <ul class="check-list">
+              <li>Custom Next.js + Tailwind CSS instant-booking mobile funnel deployed on Vercel</li>
+              <li>Interactive live preview delivered first—pay $0 until you approve the live prototype</li>
+              <li>Sub-second page load, automated SMS/Email lead capture &amp; Google Maps authority anchoring</li>
+              <li>Custom 8-second Veo 3.1 cinematic hero visual tailored to your clinic or brand</li>
+            </ul>
+            <button type="button" class="btn btn-primary" style="width:100%;" onclick="openBookingModal('PrimeNself $500 48-Hour Web Redesign')">
+              Book 48-Hour Redesign ($0 Upfront Preview) →
+            </button>
+          </div>
+
+          <!-- Package 2: Autonomous AI Agent & MCP Pipeline -->
+          <div class="glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="tag accent">AI AUTOMATION // COMPOSIO MCP</span>
+              <span style="font-family:var(--font-mono); font-size:0.74rem; color:var(--accent-primary);">Turnkey System</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; margin-top:0.75rem;">
+              Custom AI Agent &amp; MCP Outreach Engine
+            </h3>
+            <div class="price-tag">$1,200 – $2,500 <span>/ custom deployment</span></div>
+            <p style="color:var(--text-secondary); font-size:0.86rem;">
+              The exact autonomous B2B acquisition &amp; workflow architecture powering PrimeNself Studio, customized for your agency or B2B sales team.
+            </p>
+            <ul class="check-list">
+              <li>Automated lead discovery, mobile friction site auditing &amp; SQLite/Supabase CRM sync</li>
+              <li>Google Omni behavioral psychology pitch synthesis + automated follow-up state machine</li>
+              <li>Composio MCP integrations across Gmail, Google Drive, Notion, Slack &amp; GitHub</li>
+              <li>Programmatic Veo 3.1 / Remotion personalized video pitch generation at scale</li>
+            </ul>
+            <button type="button" class="btn btn-secondary" style="width:100%;" onclick="openBookingModal('Custom AI Agent & Composio MCP Pipeline ($1,200-$2,500)')">
+              Architect My AI Pipeline →
+            </button>
+          </div>
+
+          <!-- Package 3: Antigravity Creator Studio & StylishAura POD -->
+          <div class="glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="tag violet">CREATOR &amp; E-COMMERCE SYSTEMS</span>
+              <span style="font-family:var(--font-mono); font-size:0.74rem; color:#C4B5FD;">Revenue Share / Fixed</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; margin-top:0.75rem;">
+              Antigravity Creator Studio &amp; POD Ventures
+            </h3>
+            <div class="price-tag">$750 <span>/ system or Creator Joint-Venture</span></div>
+            <p style="color:var(--text-secondary); font-size:0.86rem;">
+              Digital product ecosystems for creators plus automated print-on-demand brands modeled on my venture <strong>StylishAura</strong>.
+            </p>
+            <ul class="check-list">
+              <li><strong>Antigravity Creator Studio:</strong> Custom Notion operating systems &amp; automated Google Sheets quantitative trackers for creators</li>
+              <li><strong>StylishAura Blueprint:</strong> Full Printify + Stripe automated e-commerce storefront &amp; fulfillment pipeline</li>
+              <li>Automated checkout, webhook delivery, and conversion-optimized landing pages</li>
+              <li>End-to-end technical operation so creators focus 100% on content</li>
+            </ul>
+            <button type="button" class="btn btn-secondary" style="width:100%;" onclick="openBookingModal('Antigravity Creator Studio — Notion/Sheets/E-Commerce Build')">
+              Launch Creator Ecosystem →
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive B2B ROI & Lead-Loss Calculator -->
+        <div class="glass-card" style="margin-top: 1.75rem; display:grid; grid-template-columns: 1.15fr 0.85fr; gap:1.5rem; align-items:center;">
+          <div>
+            <span class="tag emerald">INTERACTIVE KAHNEMAN LOSS-AVERSION CALCULATOR</span>
+            <h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:700; margin:0.5rem 0;">
+              Quantify How Much Mobile Website Friction Costs Your Clinic or Contracting Business
+            </h3>
+            <p style="color:var(--text-secondary); font-size:0.86rem; margin-bottom:1rem;">
+              Adjust your monthly website visitors and average client lifetime value below to see why a $500 48-hour PrimeNself redesign pays for itself on the very first recovered client:
+            </p>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem;">
+              <div>
+                <label style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-secondary);">
+                  Monthly Mobile Visitors: <strong id="calc-visitors-lbl" style="color:var(--accent-primary);">600</strong>
+                </label>
+                <input type="range" id="calc-visitors" min="150" max="5000" step="50" value="600" style="width:100%; margin-top:0.4rem;" oninput="updateRoiCalculator()" />
+              </div>
+              <div>
+                <label style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-secondary);">
+                  Avg. Patient / Client Value ($): <strong id="calc-ltv-lbl" style="color:var(--accent-primary);">$1,800</strong>
+                </label>
+                <input type="range" id="calc-ltv" min="300" max="10000" step="100" value="1800" style="width:100%; margin-top:0.4rem;" oninput="updateRoiCalculator()" />
+              </div>
+            </div>
+          </div>
+
+          <div style="background:#050811; border:1px solid var(--border-highlight); border-radius:12px; padding:1.25rem; text-align:center;">
+            <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--text-secondary);">ESTIMATED RECOVERED MONTHLY REVENUE (+1.5% CONVERSION LIFT)</div>
+            <div id="calc-monthly-gain" style="font-family:var(--font-display); font-size:2.3rem; font-weight:800; color:#10B981; margin:0.35rem 0;">$16,200/mo</div>
+            <div id="calc-roi-multiple" style="font-family:var(--font-mono); font-size:0.78rem; color:var(--accent-primary);">32.4x First-Month ROI on a $500 PrimeNself Build</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- (5) RESEARCH & POLYMATH LAB (STEM, OLYMPIAD & COMPUTATIONAL NEUROSCIENCE) -->
+    <section id="research">
+      <div class="container">
+        <div class="section-eyebrow">03 // Research &amp; Polymath Lab (Haileybury Bhaluka &amp; Cambridge STEM Dossier)</div>
+        <h2 class="section-title">Bio-Computing, Computational Neuroscience, Olympiad Mathematics &amp; Memory Systems</h2>
+        <p class="section-desc">
+          Beyond software engineering, my academic research explores how biological cortical networks process information, adapt via Hebbian synaptic plasticity, and inspire next-generation wetware-silicon hybrid architectures.
+        </p>
+
+        <div class="grid-2">
+          <!-- Interactive HD-MEA & DishBrain Bio-Computing Simulator -->
+          <div class="glass-card featured">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.65rem;">
+              <span class="tag violet">COMPUTATIONAL NEUROSCIENCE // INTERACTIVE LAB</span>
+              <span style="font-family:var(--font-mono); font-size:0.72rem; color:#C4B5FD;">HD-MEA • DishBrain • LTP</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.32rem; font-weight:700; margin-bottom:0.45rem;">
+              Bio-Computing: HD-MEA Electrophysiology, DishBrain &amp; Hebbian Plasticity
+            </h3>
+            <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:0.9rem;">
+              Independent study of <strong>High-Density Multielectrode Arrays (HD-MEA)</strong> and Cortical Labs' <strong>DishBrain</strong> architecture—where living biological cortical neurons interface with silicon microelectrodes in closed-loop sensory-motor feedback cycles governed by Friston's Free Energy Principle, <strong>Long-Term Potentiation (LTP)</strong>, and <strong>Hebbian learning</strong> ($\Delta w_{ij} = \eta \cdot x_i \cdot y_j$).
+            </p>
+
+            <div class="mea-simulator">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.55rem; flex-wrap:wrap; gap:0.5rem;">
+                <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--accent-primary);">
+                  ⚡ LIVE HD-MEA CORTICAL ARRAY SIMULATOR (Click/Tap Electrodes to Trigger Tetanic LTP Stimulus)
+                </span>
+                <button type="button" class="btn-ghost" style="padding:0.28rem 0.65rem; font-size:0.7rem; border-radius:6px; cursor:pointer;" onclick="stimulateMeaBurst()">
+                  Inject High-Freq LTP Pulse
+                </button>
+              </div>
+              <canvas id="mea-canvas" width="560" height="230" aria-label="Interactive HD-MEA Biological Neural Feedback Loop Simulator"></canvas>
+              <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.71rem; color:var(--text-secondary); margin-top:0.55rem;">
+                <span>Mean Synaptic Weight ($\bar{w}_{ij}$): <strong id="mea-weight-readout" style="color:#10B981;">1.42 mV</strong></span>
+                <span>LTP Potentiation State: <strong id="mea-ltp-state" style="color:#38BDF8;">ACTIVE CLOSED-LOOP</strong></span>
+                <span>Spikes/sec: <strong id="mea-spike-rate" style="color:#F59E0B;">68 Hz</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: BdMO, NASA STEM Gateway & Mind Palace Architecture -->
+          <div style="display:flex; flex-direction:column; gap:1.25rem;">
+            <div class="glass-card">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                <span class="tag accent">OLYMPIAD MATHEMATICS &amp; AEROSPACE STEM</span>
+                <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--accent-primary);">BdMO &amp; NASA STEM</span>
+              </div>
+              <h3 style="font-family:var(--font-display); font-size:1.22rem; font-weight:700; margin-bottom:0.4rem;">
+                Bangladesh Math Olympiad (BdMO) &amp; NASA STEM Gateway
+              </h3>
+              <p style="color:var(--text-secondary); font-size:0.88rem;">
+                Competitive problem solver in the <strong>Bangladesh Mathematical Olympiad (BdMO)</strong> focusing on modular arithmetic, Diophantine equations, combinatorics, and invariant proofs—directly informing my deterministic quantitative trading algorithms (`QuantEdge`) and algorithmic complexity optimization. Active participant in the <strong>NASA STEM Gateway</strong> community exploring computational modeling and autonomous systems.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Bangladesh Math Olympiad (BdMO)</span>
+                <span class="tag">NASA STEM Gateway Member</span>
+                <span class="tag">Number Theory &amp; Combinatorics</span>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                <span class="tag emerald">COGNITIVE ARCHITECTURE // MEMORY ENGINEERING</span>
+                <span style="font-family:var(--font-mono); font-size:0.72rem; color:#34D399;">Spatial Loci Encoding</span>
+              </div>
+              <h3 style="font-family:var(--font-display); font-size:1.22rem; font-weight:700; margin-bottom:0.4rem;">
+                Mind Palace (Method of Loci) &amp; High-Density Visualization Protocols
+              </h3>
+              <p style="color:var(--text-secondary); font-size:0.88rem;">
+                Practitioner of structured spatial memory architectures (<strong>Method of Loci / Mind Palace</strong>) and vivid multi-sensory associative encoding—mapping complex neurobiology pathways, mathematical proofs, and system architectures into navigable 3D mental rooms. Reinforced daily by my custom Android Termux daemon (<code>discipline_guardian.py</code>) with dedicated 19:30–21:30 recall &amp; spaced-repetition blocks.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Method of Loci (Mind Palace)</span>
+                <span class="tag">Active Recall Engineering</span>
+                <span class="tag">Termux Wakelock Scheduler</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- (6) CREATIVE & ATHLETIC DISCIPLINE ("BEYOND THE TERMINAL") -->
+    <section id="beyond-terminal" style="background: linear-gradient(180deg, rgba(12, 16, 26, 0.45) 0%, rgba(7, 9, 14, 0) 100%); border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-eyebrow">04 // Creative Arts, Music, Strategy &amp; Athletic Conditioning</div>
+        <h2 class="section-title">Beyond the Terminal: HollowNbeats, Psychological Strategy, Sports Analytics &amp; Boxing</h2>
+        <p class="section-desc">
+          True polymathy requires synthesizing rigorous quantitative logic with musical composition, narrative psychology, statistical sports modeling, and relentless physical conditioning.
+        </p>
+
+        <div class="grid-2">
+          <!-- Card 1: HollowNbeats Music Production & Bengali Songwriting -->
+          <div class="glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.55rem;">
+              <span class="tag violet">MUSIC PRODUCTION &amp; SONGWRITING // HOLLOWNBEATS</span>
+              <span style="font-family:var(--font-mono); font-size:0.72rem; color:#C4B5FD;">Web Audio Synth Preview</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; margin-bottom:0.45rem;">
+              HollowNbeats — <em>"Two Dimensional Heart"</em> &amp; <em>"দরজার ওপাশে"</em>
+            </h3>
+            <p style="color:var(--text-secondary); font-size:0.88rem;">
+              Music producer releasing original atmospheric electronic and melancholic instrumental tracks under the artist alias <strong>HollowNbeats</strong> (featured release: <em>"Two Dimensional Heart"</em>), alongside original Bengali songwriting including <em>"দরজার ওপাশে"</em> (<em>Beyond the Door</em>)—exploring solitude, memory, and emotional duality.
+            </p>
+
+            <div class="audio-visualizer-bars" id="audio-viz-container" aria-hidden="true">
+              <!-- Bars animated via Web Audio API synthesizer -->
+              <div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div>
+              <div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div>
+              <div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div>
+              <div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div>
+              <div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div>
+              <div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div>
+            </div>
+
+            <div style="display:flex; gap:0.65rem; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+              <button type="button" class="btn btn-secondary" id="btn-play-synth" style="padding:0.55rem 1rem; font-size:0.8rem;" onclick="toggleHollowNbeatsSynth()">
+                ▶ Play "Two Dimensional Heart" (Live WebAudio Synth Motif)
+              </button>
+              <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-secondary);">
+                বাংলা মৌলিক গান: <strong>"দরজার ওপাশে"</strong>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 2: Psychological Thriller Screenwriting -->
+          <div class="glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.55rem;">
+              <span class="tag accent">NARRATIVE ARCHITECTURE // GAME THEORY</span>
+              <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--accent-primary);">Psychological Thriller</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; margin-bottom:0.45rem;">
+              High-IQ Strategic Manipulation &amp; Psychological Thriller Screenwriting
+            </h3>
+            <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:0.9rem;">
+              Screenwriter crafting multi-layered psychological thrillers centered on information asymmetry, सेकंड-order game theory, and strategic cognitive manipulation—studying and modeling narrative archetypes inspired by <strong>Johan Liebert</strong> (<em>Monster</em>), <strong>Light Yagami</strong> (<em>Death Note</em>), and <strong>Kiyotaka Ayanokoji</strong> (<em>Classroom of the Elite</em>).
+            </p>
+            <div class="code-block" style="margin:0;">[SCENE GRAPH ARCHETYPE ANALYSIS]
+• Johan Liebert Model  -&gt; Existential Nihilism &amp; Identity Erasure Mechanics
+• Light Yagami Model   -&gt; Deductive Information Traps &amp; Rules-Based Escalation
+• Ayanokoji Model      -&gt; Instrumental Game Theory &amp; Concealed Baseline Capability</div>
+          </div>
+
+          <!-- Card 3: Football Sports Analytics (Messi vs Ronaldo Statistical Modeling) -->
+          <div class="glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.55rem;">
+              <span class="tag emerald">SPORTS DATA ANALYTICS // STATISTICAL RESEARCH</span>
+              <span style="font-family:var(--font-mono); font-size:0.72rem; color:#34D399;">WhoScored &amp; Per-90 Metrics</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; margin-bottom:0.45rem;">
+              Football Analytics: Lionel Messi vs. Cristiano Ronaldo Quantitative Study
+            </h3>
+            <p style="color:var(--text-secondary); font-size:0.86rem; margin-bottom:0.9rem;">
+              Deep longitudinal statistical analysis comparing career goal contributions (G+A), non-penalty expected goals + assists (npxG+xA/90), progressive playmaking carries, and career <strong>WhoScored match rating distributions</strong> across domestic and UEFA Champions League eras.
+            </p>
+
+            <div class="stat-compare-row">
+              <div class="stat-compare-header">
+                <span style="color:#38BDF8;">Lionel Messi: 1.14 G+A / 90 (Career Ratio)</span>
+                <span style="color:#F59E0B;">Cristiano Ronaldo: 0.96 G+A / 90</span>
+              </div>
+              <div class="stat-dual-bar">
+                <div style="width:54.3%; background:#38BDF8;"></div>
+                <div style="width:45.7%; background:#F59E0B;"></div>
+              </div>
+            </div>
+
+            <div class="stat-compare-row" style="margin-bottom:0;">
+              <div class="stat-compare-header">
+                <span style="color:#38BDF8;">Messi Mean WhoScored Rating: 8.48 / 10</span>
+                <span style="color:#F59E0B;">Ronaldo Mean WhoScored Rating: 7.92 / 10</span>
+              </div>
+              <div class="stat-dual-bar">
+                <div style="width:51.7%; background:#38BDF8;"></div>
+                <div style="width:48.3%; background:#F59E0B;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Winter Boxing Conditioning & Calisthenics -->
+          <div class="glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.55rem;">
+              <span class="tag accent">ATHLETIC CONDITIONING // TERMUX GUARDIAN</span>
+              <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--accent-primary);">06:00 – 22:30 Protocol</span>
+            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; margin-bottom:0.45rem;">
+              Winter Boxing Conditioning, Calisthenics &amp; Endurance Running
+            </h3>
+            <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:0.9rem;">
+              High-output cognitive engineering demands physical resilience. I train year-round with a focus on <strong>winter boxing conditioning</strong> (footwork drills, high-volume shadowboxing combinations, and anaerobic rounds), progressive <strong>calisthenics</strong>, and roadwork endurance running—enforced by my custom Termux hardware wakelock daemon (<code>discipline_guardian.py</code>).
+            </p>
+            <div class="tag-row">
+              <span class="tag emerald">06:00 Morning Deep Work</span>
+              <span class="tag accent">Winter Boxing &amp; Roadwork</span>
+              <span class="tag violet">Calisthenics Strength</span>
+              <span class="tag">22:00 Zero-Screen Wind Down</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- (7) DIRECT CONTACT & DOWNLOADABLE 1-PAGE STEM/CLIENT DOSSIER -->
+    <section id="contact" style="border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="no-print">
+          <div class="section-eyebrow">05 // Direct Dispatch &amp; 1-Page Executive Summary PDF</div>
+          <h2 class="section-title">Initiate a Project with PrimeNself Studio or Download the Academic Dossier</h2>
+          <p class="section-desc">
+            Direct communication channels for international B2B clients, creator partnerships, and Haileybury Bhaluka / Cambridge STEM admissions &amp; scholarship boards.
+          </p>
+
+          <div class="grid-2">
+            <!-- Contact Channels & Instant Dossier Generator -->
+            <div class="glass-card featured">
+              <h3 style="font-family:var(--font-display); font-size:1.35rem; font-weight:700; margin-bottom:0.65rem;">
+                Direct Command Links &amp; Print-Ready Dossier
+              </h3>
+              <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:1.25rem;">
+                Need a 1-page printable executive summary for an admissions committee review or agency procurement approval? Click below to preview or print the formatted A4 dossier via native <code>@media print</code> CSS.
+              </p>
+
+              <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.4rem;">
+                <a href="mailto:nahinmr9@gmail.com?subject=PrimeNself%20Studio%20%2F%20STEM%20Evaluation%20Inquiry%20for%20Mahi%20Al%20Nahin" class="arch-node" style="text-decoration:none; color:var(--text-primary);">
+                  <span>📧 <strong>Direct Email:</strong> nahinmr9@gmail.com</span>
+                  <span style="color:var(--accent-primary);">Send Email ↗</span>
+                </a>
+                <a href="https://github.com/CaptainNahin" target="_blank" rel="noopener" class="arch-node" style="text-decoration:none; color:var(--text-primary);">
+                  <span>💻 <strong>GitHub Profile:</strong> github.com/CaptainNahin</span>
+                  <span style="color:var(--accent-primary);">View 5 Repos ↗</span>
+                </a>
+                <a href="https://trading-bot-six-kohl.vercel.app" target="_blank" rel="noopener" class="arch-node" style="text-decoration:none; color:var(--text-primary);">
+                  <span>📈 <strong>QuantEdge Live Gateway:</strong> trading-bot-six-kohl.vercel.app</span>
+                  <span style="color:#10B981;">Live App ↗</span>
+                </a>
+              </div>
+
+              <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+                <button type="button" class="btn btn-primary" onclick="triggerPrintDossier()">
+                  🖨️ Print / Save 1-Page Executive PDF Dossier
+                </button>
+                <button type="button" class="btn btn-secondary" onclick="toggleOnScreenDossier()">
+                  📄 Toggle On-Screen 1-Page Dossier Preview
+                </button>
+              </div>
+            </div>
+
+            <!-- Interactive Direct Message / Brief Dispatch Composer -->
+            <div class="glass-card">
+              <h3 style="font-family:var(--font-display); font-size:1.35rem; font-weight:700; margin-bottom:0.65rem;">
+                Instant Dispatch Composer (B2B Client or Admissions Evaluator)
+              </h3>
+              <form onsubmit="handleDirectDispatch(event)">
+                <label style="font-family:var(--font-mono); font-size:0.74rem; color:var(--text-secondary);">YOUR NAME / ORGANIZATION</label>
+                <input type="text" id="dispatch-name" class="form-input" placeholder="e.g., Dr. Carter (Austin MedSpa) or Haileybury Admissions Board" required />
+
+                <label style="font-family:var(--font-mono); font-size:0.74rem; color:var(--text-secondary);">INQUIRY TRACK</label>
+                <select id="dispatch-track" class="form-select">
+                  <option value="PrimeNself $500 48-Hour B2B Web Redesign ($0 Upfront Preview)">PrimeNself Studio — $500 48-Hour B2B Web Redesign</option>
+                  <option value="Custom AI Agent & Composio MCP Automation ($1,200-$2,500)">PrimeNself Studio — Custom AI Agent &amp; MCP Automation</option>
+                  <option value="Antigravity Creator Studio (Notion / Sheets / POD Ecosystem)">Antigravity Creator Studio — Notion / Sheets / POD Build</option>
+                  <option value="Haileybury Bhaluka / Academic STEM Scholarship Evaluation">Haileybury Bhaluka / Academic STEM &amp; Scholarship Evaluation</option>
+                </select>
+
+                <label style="font-family:var(--font-mono); font-size:0.74rem; color:var(--text-secondary);">PROJECT BRIEF OR EVALUATION MESSAGE</label>
+                <textarea id="dispatch-message" class="form-textarea" rows="3" placeholder="Share your website URL, automation goal, or academic interview details..." required></textarea>
+
+                <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+                  <button type="submit" class="btn btn-primary" style="flex:1;">
+                    🚀 Launch Direct Email Dispatch
+                  </button>
+                  <button type="button" class="btn btn-ghost" onclick="copyBriefToClipboard()">
+                    📋 Copy Formatted Brief
+                  </button>
+                </div>
+                <p id="dispatch-status" style="font-family:var(--font-mono); font-size:0.74rem; color:#10B981; margin-top:0.6rem; display:none;"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRINT-READY 1-PAGE HAILEYBURY BHALUKA & FREELANCE EXECUTIVE SUMMARY PDF VIEW -->
+        <div id="executive-print-dossier" aria-label="1-Page Printable Executive Summary and Haileybury Bhaluka Academic Dossier">
+          <div class="dossier-header">
+            <div>
+              <h1 style="font-size:1.55rem; font-weight:900; letter-spacing:-0.02em; color:#0F172A;">
+                MAHI AL NAHIN (CAPTAINNAHIN)
+              </h1>
+              <p style="font-size:0.86rem; font-weight:600; color:#334155;">
+                14-Year-Old Systems Architect • AI Automation Engineer • Quantitative Developer • Bio-Computing Researcher
+              </p>
+              <p style="font-size:0.78rem; color:#475569;">
+                Location: Gangni, Meherpur, Bangladesh | Email: nahinmr9@gmail.com | GitHub: https://github.com/CaptainNahin | Web: https://captainnahin.github.io
+              </p>
+            </div>
+            <div style="text-align:right; font-size:0.76rem; font-family:monospace; color:#1E293B;">
+              <div><strong>DOSSIER REF:</strong> HB-STEM-B2B-2026</div>
+              <div><strong>CLOUD CLUSTER:</strong> quantedge-worker-prod (32-vCPU)</div>
+              <div><strong>VENTURES:</strong> PrimeNself Studio / Antigravity</div>
+            </div>
+          </div>
+
+          <p style="font-size:0.83rem; color:#1E293B; margin-bottom:0.75rem; background:#F1F5F9; padding:0.65rem 0.85rem; border-left:4px solid #0284C7;">
+            <strong>Executive &amp; Resilience Summary:</strong> After my laptop was stolen in Gangni, Meherpur, I engineered a complete Linux cloud development environment inside <strong>Termux on an Android smartphone</strong> linked to <strong>Google Cloud 32-core build nodes (`E2_HIGHCPU_32`)</strong>. Orchestrating autonomous AI agents (Antigravity CLI, OpenCode, Claude Code, Codex, and Composio MCP), I architect production quantitative trading engines, operating environments, cloud 3D rendering pipelines, and high-converting B2B web systems.
+          </p>
+
+          <div class="dossier-grid">
+            <div>
+              <div class="dossier-section-title">1. Systems, Cloud &amp; Quantitative Engineering</div>
+              <p style="margin-bottom:0.45rem;">
+                • <strong>AuraQuant v5 APEX &amp; QuantEdge Gateway:</strong> Creator of the AuraQuant v5 APEX algorithmic indicator on TradingView (custom momentum vectors, Choppiness Index/ADX regime gating, dynamic ATR profit-locking stop-loss) and <em>QuantEdge</em> (<code>github.com/CaptainNahin/Trading-bot</code>, live on Vercel/Supabase) with closed-candle anti-repainting &amp; loss-diagnosis memory.
+              </p>
+              <p style="margin-bottom:0.45rem;">
+                • <strong>AuroraOS &amp; Small Language Models (SLM):</strong> Lead developer of <em>AuroraOS</em> (<code>github.com/CaptainNahin/AuroraOS</code>, 5★)—a glassmorphic desktop operating environment in TypeScript/Node.js with virtual workspaces, sandboxed VFS, and bare-metal Linux roadmap, alongside SLM LoRA/QLoRA quantization.
+              </p>
+              <p>
+                • <strong>32-Core Cloud 3D/AI Media Pipeline:</strong> Built <code>last_boy_3d_studio</code> &amp; <code>minecraft_remotion_studio</code> on GCP <code>quantedge-worker-prod</code>, rendering 100-scene 20-minute 3D/Remotion episodes via 16 parallel workers, headless Blender Python rigging, Gemini API, and Veo 3.1.
+              </p>
+
+              <div class="dossier-section-title">2. STEM, Olympiad &amp; Bio-Computing Research</div>
+              <p style="margin-bottom:0.45rem;">
+                • <strong>Bio-Computing &amp; Computational Neuroscience:</strong> Independent researcher studying High-Density Multielectrode Arrays (<strong>HD-MEA</strong>), Cortical Labs' <strong>DishBrain</strong> closed-loop biological neural feedback systems, <strong>Long-Term Potentiation (LTP)</strong>, and <strong>Hebbian synaptic plasticity</strong> ($\Delta w_{ij} = \eta x_i y_j$).
+              </p>
+              <p>
+                • <strong>Mathematics &amp; Memory Systems:</strong> <strong>Bangladesh Math Olympiad (BdMO)</strong> competitor, <strong>NASA STEM Gateway</strong> member, and practitioner of <strong>Method of Loci (Mind Palace)</strong> cognitive memory encoding enforced via custom Termux wakelock daemon (<code>discipline_guardian.py</code>).
+              </p>
+            </div>
+
+            <div>
+              <div class="dossier-section-title">3. B2B Agency &amp; Product Ventures</div>
+              <p style="margin-bottom:0.45rem;">
+                • <strong>PrimeNself Studio (Founder):</strong> High-converting B2B web redesign ($500 48-hour builds, $0 upfront preview) &amp; autonomous AI outreach agency for clinics and contractors. Powered by <code>omni_brain.py</code> (Google Omni 1.1 Kahneman loss-aversion + Chris Voss psychology, 8s Veo 3.1 commercials, and Composio MCP).
+              </p>
+              <p style="margin-bottom:0.45rem;">
+                • <strong>Antigravity Creator Studio &amp; StylishAura:</strong> Partnering with creators to build custom Notion &amp; Google Sheets digital operating ecosystems; founder of <strong>StylishAura</strong> (Printify + Stripe automated POD brand) and creator of <strong>DocNworld</strong> AI telemedicine platform.
+              </p>
+
+              <div class="dossier-section-title">4. Creative Arts, Strategy &amp; Athletic Discipline</div>
+              <p style="margin-bottom:0.45rem;">
+                • <strong>HollowNbeats (Music Producer &amp; Songwriter):</strong> Composer of original electronic track <em>"Two Dimensional Heart"</em> and original Bengali song <em>"দরজার ওপাশে"</em>.
+              </p>
+              <p style="margin-bottom:0.45rem;">
+                • <strong>Screenwriting &amp; Sports Analytics:</strong> Psychological thriller writer modeling high-IQ strategic manipulation dynamics (Johan Liebert, Light Yagami, Kiyotaka Ayanokoji archetypes); quantitative football researcher (Lionel Messi vs. Cristiano Ronaldo per-90 &amp; WhoScored rating distributions).
+              </p>
+              <p>
+                • <strong>Physical Conditioning:</strong> Disciplined winter boxing conditioning, calisthenics, and endurance roadwork running.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Booking / Inquiry Modal -->
+  <div class="modal-backdrop" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <span class="tag emerald" id="modal-badge">PRIMENSELF STUDIO // FAST-TRACK DISPATCH</span>
+        <button type="button" class="btn-ghost" style="border-radius:8px; cursor:pointer;" onclick="closeBookingModal()">✕ Close</button>
+      </div>
+      <h3 id="modal-title" style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; margin-bottom:0.5rem;">
+        Reserve Your 48-Hour Build or AI Automation Pipeline
+      </h3>
+      <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:1rem;">
+        Zero-Risk Reversal: For $500 web builds, we engineer your live Next.js/Vercel preview first—you pay $0 upfront and only place the $250 deposit after approving the interactive prototype.
+      </p>
+      <form onsubmit="submitModalBooking(event)">
+        <label style="font-family:var(--font-mono); font-size:0.74rem; color:var(--text-secondary);">SELECTED PACKAGE</label>
+        <input type="text" id="modal-package" class="form-input" readonly />
+
+        <label style="font-family:var(--font-mono); font-size:0.74rem; color:var(--text-secondary);">YOUR NAME &amp; BUSINESS / INSTITUTION</label>
+        <input type="text" id="modal-client" class="form-input" placeholder="e.g., Apex Dental Studio (Miami) / Creator Channel" required />
+
+        <label style="font-family:var(--font-mono); font-size:0.74rem; color:var(--text-secondary);">CURRENT WEBSITE URL OR PROJECT GOAL</label>
+        <textarea id="modal-details" class="form-textarea" rows="3" placeholder="Paste your website URL for a free mobile audit + 8s Veo preview, or describe your automation workflow..." required></textarea>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;">
+          ⚡ Send Instant Booking Dispatch to Mahi Al Nahin (nahinmr9@gmail.com)
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer style="border-top: 1px solid var(--border-subtle); padding: 2.5rem 0; text-align:center; font-family:var(--font-mono); font-size:0.76rem; color:var(--text-secondary); position:relative; z-index:2;">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      <div>
+        © 2026 <strong>Mahi Al Nahin (CaptainNahin)</strong> • Engineered from Gangni, Meherpur, Bangladesh via Android Termux &amp; GCP 32-Core Cloud Cluster.
+      </div>
+      <div style="display:flex; gap:1rem;">
+        <a href="https://github.com/CaptainNahin" target="_blank" rel="noopener" style="color:var(--accent-primary); text-decoration:none;">GitHub</a>
+        <a href="https://trading-bot-six-kohl.vercel.app" target="_blank" rel="noopener" style="color:var(--accent-primary); text-decoration:none;">QuantEdge</a>
+        <a href="#top" style="color:var(--text-secondary); text-decoration:none;">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // =========================================================================
+    // 1. REAL LIVE GITHUB REPOSITORY SNAPSHOT + DYNAMIC REST API REFRESH
+    // =========================================================================
+    const FALLBACK_GITHUB_REPOS = [
+      {
+        name: "Trading-bot",
+        language: "Python",
+        stargazers_count: 4,
+        updated_at: "2026-09-27T14:10:43Z",
+        html_url: "https://github.com/CaptainNahin/Trading-bot",
+        homepage: "https://trading-bot-six-kohl.vercel.app",
+        description: "QuantEdge Live Market Gateway — A trading bot with 90%+ accuracy, deterministic multi-timeframe scan, closed-candle zero-repainting gate, and self-improving loss-diagnosis memory."
+      },
+      {
+        name: "AuroraOS",
+        language: "TypeScript",
+        stargazers_count: 5,
+        updated_at: "2026-09-18T15:27:40Z",
+        html_url: "https://github.com/CaptainNahin/AuroraOS",
+        homepage: "",
+        description: "🌌 A lightweight, glassmorphic desktop operating environment built with TypeScript & Node.js. Features virtual workspaces, a sandboxed filesystem, built-in apps, and an active roadmap to a bare-metal Linux distro."
+      },
+      {
+        name: "ITs-something-special",
+        language: "TypeScript",
+        stargazers_count: 1,
+        updated_at: "2026-08-30T19:03:04Z",
+        html_url: "https://github.com/CaptainNahin/ITs-something-special",
+        homepage: "",
+        description: "Experimental TypeScript systems prototype & stealth R&D repository ('its a secret')."
+      },
+      {
+        name: "DocNworld",
+        language: "TypeScript",
+        stargazers_count: 1,
+        updated_at: "2026-06-19T17:58:54Z",
+        html_url: "https://github.com/CaptainNahin/DocNworld",
+        homepage: "",
+        description: "AI-powered telemedicine platform connecting patients with doctors through a swipe-based interface, secure chat, voice & video calls, and an intelligent symptom-analysis assistant."
+      },
+      {
+        name: "ameen-mistanno-vander",
+        language: "HTML",
+        stargazers_count: 0,
+        updated_at: "2026-06-15T05:16:59Z",
+        html_url: "https://github.com/CaptainNahin/ameen-mistanno-vander",
+        homepage: "",
+        description: "Fast commercial web application engineered for a regional business in Bangladesh — early foundation of PrimeNself Studio."
+      }
+    ];
+
+    let allGithubRepos = [...FALLBACK_GITHUB_REPOS];
+    let activeRepoFilter = "ALL";
+
+    function renderGithubRepos(repos) {
+      const container = document.getElementById("github-repos-container");
+      if (!container) return;
+
+      const filtered = activeRepoFilter === "ALL"
+        ? repos
+        : repos.filter(r => {
+            const lang = r.language || (r.name === "AuroraOS" ? "TypeScript" : "Code");
+            return lang.toLowerCase() === activeRepoFilter.toLowerCase();
+          });
+
+      container.innerHTML = filtered.map(repo => {
+        const lang = repo.language || (repo.name === "AuroraOS" ? "TypeScript" : "Systems");
+        const updatedDate = repo.updated_at ? new Date(repo.updated_at).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "Active";
+        const desc = repo.description || "Production repository engineered by Mahi Al Nahin.";
+        return `
+          <article class="glass-card" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.65rem;">
+                <span class="tag accent">${lang}</span>
+                <span style="font-family:var(--font-mono); font-size:0.75rem; color:#F59E0B;">★ ${repo.stargazers_count || 0}</span>
+              </div>
+              <h4 style="font-family:var(--font-display); font-size:1.18rem; font-weight:700; margin-bottom:0.45rem;">
+                <a href="${repo.html_url}" target="_blank" rel="noopener" style="color:var(--text-primary); text-decoration:none;">
+                  ${repo.name} ↗
+                </a>
+              </h4>
+              <p style="color:var(--text-secondary); font-size:0.85rem; margin-bottom:1rem;">
+                ${desc}
+              </p>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-subtle); padding-top:0.75rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--text-secondary);">
+              <span>Updated: ${updatedDate}</span>
+              <div style="display:flex; gap:0.5rem;">
+                ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" rel="noopener" style="color:#10B981; text-decoration:none;">Live Demo ↗</a>` : ""}
+                <a href="${repo.html_url}" target="_blank" rel="noopener" style="color:var(--accent-primary); text-decoration:none;">Source →</a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function filterGithubRepos(lang, btnEl) {
+      activeRepoFilter = lang;
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      if (btnEl) btnEl.classList.add("active");
+      renderGithubRepos(allGithubRepos);
+    }
+
+    async function fetchLiveGithubData() {
+      renderGithubRepos(allGithubRepos);
+      try {
+        const res = await fetch("https://api.github.com/users/CaptainNahin/repos?per_page=100&sort=updated");
+        if (!res.ok) return;
+        const liveRepos = await res.json();
+        if (Array.isArray(liveRepos) && liveRepos.length > 0) {
+          allGithubRepos = liveRepos.map(r => ({
+            ...r,
+            language: r.language || (r.name === "AuroraOS" ? "TypeScript" : "Systems")
+          }));
+          const totalStars = allGithubRepos.reduce((acc, r) => acc + (r.stargazers_count || 0), 0);
+          document.getElementById("gh-repo-count").textContent = allGithubRepos.length;
+          document.getElementById("gh-star-count").textContent = totalStars;
+          const kpiStars = document.querySelector("[data-gh-total-stars]");
+          if (kpiStars) kpiStars.textContent = `${totalStars}★ / ${allGithubRepos.length}`;
+          renderGithubRepos(allGithubRepos);
+        }
+      } catch (err) {
+        // Offline in Chrome on Android — fallback snapshot is already rendered cleanly
+      }
+    }
+
+    // =========================================================================
+    // 2. INTERACTIVE DUAL-MODE SWITCHER (CLIENT MODE vs. STEM BOARD MODE)
+    // =========================================================================
+    function switchPortfolioMode(mode) {
+      document.body.setAttribute("data-mode", mode);
+      const btnClient = document.getElementById("btn-mode-client");
+      const btnStem = document.getElementById("btn-mode-stem");
+      const bannerTag = document.getElementById("mode-banner-tag");
+      const bannerText = document.getElementById("mode-banner-text");
+      const switchHint = document.getElementById("mode-switch-hint");
+
+      if (mode === "stem") {
+        btnStem.classList.add("active");
+        btnClient.classList.remove("active");
+        bannerTag.textContent = "[ACTIVE VIEW: HAILEYBURY BHALUKA & CAMBRIDGE STEM EVALUATOR MODE]";
+        bannerText.textContent = "Prioritizing AuroraOS kernel/VFS architecture, AuraQuant v5 mathematical modeling, HD-MEA/DishBrain Bio-Computing research, and BdMO/NASA STEM credentials.";
+        switchHint.textContent = "B2B Client & PrimeNself Agency View →";
+
+        document.getElementById("kpi-1-val").textContent = "HD-MEA";
+        document.getElementById("kpi-1-lbl").textContent = "DishBrain & LTP Research";
+        document.getElementById("kpi-2-val").textContent = "AuroraOS";
+        document.getElementById("kpi-2-lbl").textContent = "Sandboxed VFS & SLM Tuning";
+        document.getElementById("kpi-3-val").textContent = "BdMO";
+        document.getElementById("kpi-3-lbl").textContent = "Math Olympiad & NASA STEM";
+        setTerminalTab("biocomp", document.querySelectorAll(".term-tab")[3]);
+      } else {
+        btnClient.classList.add("active");
+        btnStem.classList.remove("active");
+        bannerTag.textContent = "[ACTIVE VIEW: INTERNATIONAL B2B CLIENT & AGENCY MODE]";
+        bannerText.textContent = "Highlighting $500–$2,500 48-hour web redesigns, Google Omni + Veo 3.1 autonomous outreach pipelines, and creator Notion/Sheets ecosystems.";
+        switchHint.textContent = "Haileybury Bhaluka & STEM Evaluator View →";
+
+        document.getElementById("kpi-1-val").textContent = "32-Core";
+        document.getElementById("kpi-1-lbl").textContent = "GCP Cloud Build Cluster";
+        document.getElementById("kpi-2-val").textContent = "48 Hrs";
+        document.getElementById("kpi-2-lbl").textContent = "$500 B2B Web Turnaround";
+        document.getElementById("kpi-3-val").textContent = "v5 APEX";
+        document.getElementById("kpi-3-lbl").textContent = "AuraQuant & QuantEdge";
+        setTerminalTab("cluster", document.querySelectorAll(".term-tab")[0]);
+      }
+    }
+
+    function togglePortfolioMode() {
+      const current = document.body.getAttribute("data-mode");
+      switchPortfolioMode(current === "client" ? "stem" : "client");
+    }
+
+    // =========================================================================
+    // 3. INTERACTIVE HERO TERMINAL TELEMETRY TABS
+    // =========================================================================
+    const TERMINAL_SCREENS = {
+      cluster: `
+<span class="cmd-prompt">nahin@termux-arm64:~$</span> <span class="cmd-arg">gcloud builds submit --config=cloudbuild.yaml --project=quantedge-worker-prod</span>
+<span class="cmd-comment"># Dispatched from Gangni, Meherpur (Android Termux Linux) -> GCP E2_HIGHCPU_32</span>
+<span class="cmd-out">[✓] Provisioned worker: <span class="cmd-highlight">E2_HIGHCPU_32 (32 vCPUs, 100GB SSD)</span>
+[✓] Agent Swarm Active: Antigravity CLI • OpenCode • Claude Code • Composio MCP
+[✓] Built container: <span class="cmd-highlight">minecraft-remotion-renderer:latest</span> (16 parallel shards)
+[✓] Rendered 100-scene master episode: 572.6 MB MP4 -> gs://quantedge-worker-prod-3d-renders/</span>
+<span class="cmd-prompt">nahin@termux-arm64:~$</span> <span class="cmd-arg">python3 discipline/discipline_guardian.py --status</span>
+<span class="cmd-out">[GUARDIAN] Hardware Wakelock: <span class="cmd-highlight">ACTIVE</span> | Schedule: 06:00 Deep Work -> 22:30 Wind Down</span>`,
+      quant: `
+<span class="cmd-prompt">nahin@termux-arm64:~/Trading-bot$</span> <span class="cmd-arg">uv run python scripts/verify_all.py</span>
+<span class="cmd-comment"># Verifying QuantEdge Live Market Gateway + AuraQuant v5 APEX Signal Engine</span>
+<span class="cmd-out">[✓] Deterministic Pipeline: Market Data -> Quality Gate -> Multi-TF -> Regime -> LLM Review
+[✓] Closed-Candle Enforcement: <span class="cmd-highlight">ZERO REPAINTING / ZERO LOOK-AHEAD BIAS</span>
+[✓] AuraQuant v5 APEX: Momentum Vector + Choppiness Index (&lt;38.2) + Dynamic ATR Profit-Lock
+[✓] Loss-Diagnosis Memory DB: Self-improving rule extraction active on Supabase Postgres
+[✓] Live Production Gateway: <span class="cmd-highlight">https://trading-bot-six-kohl.vercel.app</span> (HTTP 200)</span>`,
+      b2b: `
+<span class="cmd-prompt">nahin@termux-arm64:~$</span> <span class="cmd-arg">python3 run_daily.py --agency="PrimeNself Studio"</span>
+<span class="cmd-comment"># Autonomous B2B Lead Hunter + Google Omni Behavioral Brain + Veo 3.1 Pitch Maker</span>
+<span class="cmd-out">[✓] Target Cities: Austin, Miami, Dallas, Phoenix, Denver, Toronto ($500 / 48-Hr Offer)
+[✓] Omni Brain (gemini-omni-1.1): Kahneman Loss Aversion + Chris Voss "No"-Oriented CTA
+[✓] Veo 3.1 Commercial Synth: Generated 8s personalized clinic preview + &lt;450KB GIF
+[✓] Composio MCP (ca_E5Sjbj6faefg): Synced leads &amp; previews to PrimeNself_Studio_Outreach_Hub</span>`,
+      biocomp: `
+<span class="cmd-prompt">nahin@termux-arm64:~/research$</span> <span class="cmd-arg">python3 hd_mea_hebbian_sim.py --protocol=dishbrain_ltp</span>
+<span class="cmd-comment"># Bio-Computing &amp; Computational Neuroscience Research Dossier (Haileybury STEM)</span>
+<span class="cmd-out">[✓] Electrode Grid: High-Density Multielectrode Array (HD-MEA, 26,400 CMOS sites modeled)
+[✓] Feedback Loop: Cortical Labs DishBrain Free-Energy minimization (predictable vs random)
+[✓] Synaptic Update: <span class="cmd-highlight">Δw_ij = η · x_i · y_j</span> (Hebbian Long-Term Potentiation verified)
+[✓] STEM Credentials: Bangladesh Math Olympiad (BdMO) • NASA STEM Gateway • Mind Palace Loci</span>`
+    };
+
+    function setTerminalTab(key, btnEl) {
+      const screen = document.getElementById("terminal-screen");
+      if (screen && TERMINAL_SCREENS[key]) {
+        screen.innerHTML = TERMINAL_SCREENS[key].trim();
+      }
+      if (btnEl) {
+        document.querySelectorAll(".term-tab").forEach(t => t.classList.remove("active"));
+        btnEl.classList.add("active");
+      }
+    }
+
+    // =========================================================================
+    // 4. INTERACTIVE ROI CALCULATOR FOR PRIMENSELF STUDIO
+    // =========================================================================
+    function updateRoiCalculator() {
+      const visitors = Number(document.getElementById("calc-visitors").value || 600);
+      const ltv = Number(document.getElementById("calc-ltv").value || 1800);
+      document.getElementById("calc-visitors-lbl").textContent = visitors.toLocaleString();
+      document.getElementById("calc-ltv-lbl").textContent = "$" + ltv.toLocaleString();
+
+      const recoveredClients = visitors * 0.015;
+      const monthlyGain = Math.round(recoveredClients * ltv);
+      const roiMultiple = (monthlyGain / 500).toFixed(1);
+
+      document.getElementById("calc-monthly-gain").textContent = "$" + monthlyGain.toLocaleString() + "/mo";
+      document.getElementById("calc-roi-multiple").textContent = `${roiMultiple}x First-Month ROI on a $500 PrimeNself Build`;
+    }
+
+    // =========================================================================
+    // 5. INTERACTIVE HD-MEA & HEBBIAN SYNAPTIC PLASTICITY SIMULATOR
+    // =========================================================================
+    const meaCanvas = document.getElementById("mea-canvas");
+    const meaCtx = meaCanvas ? meaCanvas.getContext("2d") : null;
+    const meaNodes = [];
+    const meaPulses = [];
+    let meanSynapticWeight = 1.42;
+
+    if (meaCanvas && meaCtx) {
+      const cols = 8, rows = 4;
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          meaNodes.push({
+            x: 45 + c * 67,
+            y: 38 + r * 50,
+            potential: Math.random() * 0.5,
+            weight: 1.0 + Math.random() * 0.6
+          });
+        }
+      }
+
+      function spawnMeaPulse(sourceIdx) {
+        const src = meaNodes[sourceIdx];
+        if (!src) return;
+        src.potential = 1.0;
+        src.weight = Math.min(2.8, src.weight + 0.12);
+        meaNodes.forEach((dst, idx) => {
+          if (idx !== sourceIdx && Math.hypot(dst.x - src.x, dst.y - src.y) < 110) {
+            meaPulses.push({ sx: src.x, sy: src.y, dx: dst.x, dy: dst.y, t: 0, targetIdx: idx });
+          }
+        });
+      }
+
+      window.stimulateMeaBurst = function() {
+        for (let i = 0; i < 4; i++) {
+          spawnMeaPulse(Math.floor(Math.random() * meaNodes.length));
+        }
+        meanSynapticWeight = Math.min(2.65, +(meanSynapticWeight + 0.08).toFixed(2));
+        document.getElementById("mea-weight-readout").textContent = meanSynapticWeight + " mV";
+        document.getElementById("mea-spike-rate").textContent = (64 + Math.floor(Math.random() * 38)) + " Hz";
+      };
+
+      meaCanvas.addEventListener("pointerdown", (e) => {
+        const rect = meaCanvas.getBoundingClientRect();
+        const scaleX = meaCanvas.width / rect.width;
+        const scaleY = meaCanvas.height / rect.height;
+        const mx = (e.clientX - rect.left) * scaleX;
+        const my = (e.clientY - rect.top) * scaleY;
+        let closest = 0, bestDist = 9999;
+        meaNodes.forEach((n, i) => {
+          const d = Math.hypot(n.x - mx, n.y - my);
+          if (d < bestDist) { bestDist = d; closest = i; }
+        });
+        spawnMeaPulse(closest);
+        window.stimulateMeaBurst();
+      });
+
+      function renderMeaLoop() {
+        meaCtx.clearRect(0, 0, meaCanvas.width, meaCanvas.height);
+
+        // Synaptic connections
+        for (let i = 0; i < meaNodes.length; i++) {
+          for (let j = i + 1; j < meaNodes.length; j++) {
+            const a = meaNodes[i], b = meaNodes[j];
+            const dist = Math.hypot(a.x - b.x, a.y - b.y);
+            if (dist < 100) {
+              const alpha = Math.min(0.55, ((a.weight + b.weight) / 4) * 0.35);
+              meaCtx.strokeStyle = `rgba(139, 92, 246, ${alpha})`;
+              meaCtx.lineWidth = (a.weight + b.weight) * 0.6;
+              meaCtx.beginPath();
+              meaCtx.moveTo(a.x, a.y);
+              meaCtx.lineTo(b.x, b.y);
+              meaCtx.stroke();
+            }
+          }
+        }
+
+        // Propagating action potentials
+        for (let i = meaPulses.length - 1; i >= 0; i--) {
+          const p = meaPulses[i];
+          p.t += 0.055;
+          const px = p.sx + (p.dx - p.sx) * p.t;
+          const py = p.sy + (p.dy - p.sy) * p.t;
+          meaCtx.fillStyle = "#38BDF8";
+          meaCtx.beginPath();
+          meaCtx.arc(px, py, 3.2, 0, Math.PI * 2);
+          meaCtx.fill();
+          if (p.t >= 1) {
+            meaNodes[p.targetIdx].potential = Math.min(1, meaNodes[p.targetIdx].potential + 0.45);
+            meaPulses.splice(i, 1);
+          }
+        }
+
+        // HD-MEA Electrodes
+        meaNodes.forEach(n => {
+          n.potential *= 0.96;
+          meaCtx.fillStyle = n.potential > 0.25 ? "#10B981" : "#64748B";
+          meaCtx.beginPath();
+          meaCtx.arc(n.x, n.y, 4.5 + n.potential * 4, 0, Math.PI * 2);
+          meaCtx.fill();
+        });
+
+        if (Math.random() < 0.04) {
+          spawnMeaPulse(Math.floor(Math.random() * meaNodes.length));
+        }
+        requestAnimationFrame(renderMeaLoop);
+      }
+      renderMeaLoop();
+    }
+
+    // =========================================================================
+    // 6. HOLLOWNBEATS WEB AUDIO API SYNTHESIZER ("TWO DIMENSIONAL HEART")
+    // =========================================================================
+    let audioCtx = null;
+    let synthInterval = null;
+    let isSynthPlaying = false;
+
+    function toggleHollowNbeatsSynth() {
+      const btn = document.getElementById("btn-play-synth");
+      const bars = document.querySelectorAll(".viz-bar");
+
+      if (isSynthPlaying) {
+        clearInterval(synthInterval);
+        isSynthPlaying = false;
+        btn.textContent = '▶ Play "Two Dimensional Heart" (Live WebAudio Synth Motif)';
+        bars.forEach(b => (b.style.height = "20%"));
+        return;
+      }
+
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!audioCtx && AudioContextClass) {
+        audioCtx = new AudioContextClass();
+      }
+
+      isSynthPlaying = true;
+      btn.textContent = '⏹ Stop "Two Dimensional Heart" Synth Preview';
+
+      // Minor-key arpeggio motif inspired by HollowNbeats "Two Dimensional Heart"
+      const freqs = [220.0, 261.63, 329.63, 392.0, 329.63, 293.66, 246.94, 196.0];
+      let step = 0;
+
+      synthInterval = setInterval(() => {
+        if (audioCtx) {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "triangle";
+          osc.frequency.setValueAtTime(freqs[step % freqs.length], audioCtx.currentTime);
+          gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.34);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.35);
+        }
+        bars.forEach(b => {
+          b.style.height = (18 + Math.floor(Math.random() * 80)) + "%";
+        });
+        step++;
+      }, 280);
+    }
+
+    // =========================================================================
+    // 7. BOOKING MODAL, DIRECT DISPATCH & 1-PAGE PRINT DOSSIER
+    // =========================================================================
+    function openBookingModal(packageName) {
+      document.getElementById("modal-package").value = packageName;
+      document.getElementById("booking-modal").classList.add("open");
+    }
+
+    function closeBookingModal() {
+      document.getElementById("booking-modal").classList.remove("open");
+    }
+
+    function submitModalBooking(e) {
+      e.preventDefault();
+      const pkg = document.getElementById("modal-package").value;
+      const client = document.getElementById("modal-client").value;
+      const details = document.getElementById("modal-details").value;
+      const subject = encodeURIComponent(`[PrimeNself Studio] ${pkg} — ${client}`);
+      const body = encodeURIComponent(`Hi Nahin,\n\nI would like to initiate:\nPackage: ${pkg}\nClient / Organization: ${client}\n\nProject Details:\n${details}\n\nBest regards,\n${client}`);
+      window.location.href = `mailto:nahinmr9@gmail.com?subject=${subject}&body=${body}`;
+      closeBookingModal();
+    }
+
+    function handleDirectDispatch(e) {
+      e.preventDefault();
+      const name = document.getElementById("dispatch-name").value;
+      const track = document.getElementById("dispatch-track").value;
+      const msg = document.getElementById("dispatch-message").value;
+      const subject = encodeURIComponent(`[Portfolio Dispatch] ${track} — ${name}`);
+      const body = encodeURIComponent(`Hello Mahi Al Nahin,\n\nSender: ${name}\nTrack: ${track}\n\nMessage:\n${msg}`);
+      window.location.href = `mailto:nahinmr9@gmail.com?subject=${subject}&body=${body}`;
+    }
+
+    function copyBriefToClipboard() {
+      const name = document.getElementById("dispatch-name").value || "Prospective Client / Evaluator";
+      const track = document.getElementById("dispatch-track").value;
+      const msg = document.getElementById("dispatch-message").value || "Requesting consultation / scholarship dossier review.";
+      const text = `TO: Mahi Al Nahin (nahinmr9@gmail.com)\nFROM: ${name}\nTRACK: ${track}\nBRIEF: ${msg}`;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+      }
+      const status = document.getElementById("dispatch-status");
+      status.style.display = "block";
+      status.textContent = "✓ Formatted brief copied to clipboard! Ready to paste into email or DM.";
+    }
+
+    function toggleOnScreenDossier() {
+      const el = document.getElementById("executive-print-dossier");
+      el.classList.toggle("visible-preview");
+      if (el.classList.contains("visible-preview")) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    function triggerPrintDossier() {
+      const el = document.getElementById("executive-print-dossier");
+      el.classList.add("visible-preview");
+      window.print();
+    }
+
+    // =========================================================================
+    // 8. SUBTLE BACKGROUND NEURAL-NETWORK PARTICLE FIELD
+    // =========================================================================
+    (function initNeuralBackground() {
+      const canvas = document.getElementById("neural-canvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      const count = Math.min(55, Math.floor((width * height) / 24000));
+      const particles = Array.from({ length: count }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.42,
+        vy: (Math.random() - 0.5) * 0.42,
+        r: 1.3 + Math.random() * 1.5
+      }));
+
+      window.addEventListener("resize", () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        const isStem = document.body.getAttribute("data-mode") === "stem";
+        const rgb = isStem ? "167, 139, 250" : "56, 189, 248";
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          ctx.fillStyle = `rgba(${rgb}, 0.55)`;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const q = particles[j];
+            const d = Math.hypot(p.x - q.x, p.y - q.y);
+            if (d < 135) {
+              ctx.strokeStyle = `rgba(${rgb}, ${(1 - d / 135) * 0.16})`;
+              ctx.lineWidth = 0.8;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+
+    // Initialize terminal & live GitHub repos on load
+    document.addEventListener("DOMContentLoaded", () => {
+      setTerminalTab("cluster", document.querySelectorAll(".term-tab")[0]);
+      fetchLiveGithubData();
+      updateRoiCalculator();
+    });
+  </script>
+</body>
+</html>
