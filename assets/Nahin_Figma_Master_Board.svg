@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1280" width="1920" height="1280" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1920" y2="1280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#050508"/>
+      <stop offset="55%" stop-color="#0A0814"/>
+      <stop offset="100%" stop-color="#050508"/>
+    </linearGradient>
+    <linearGradient id="geassGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7B2CBF"/>
+      <stop offset="50%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <linearGradient id="violetGold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7B2CBF"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <style>
+      .title { font-family: 'Space Grotesk', 'Inter', sans-serif; font-weight: 800; fill: #F4F4F6; }
+      .mono { font-family: 'JetBrains Mono', monospace; fill: #94A3B8; font-size: 13px; }
+      .body { font-family: 'Inter', sans-serif; fill: #CBD5E1; font-size: 14px; }
+      .gold { fill: #D4AF37; font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+      .cyan { fill: #00F0FF; font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+      .violet { fill: #9D4EDD; font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+      .card { fill: #0B0B14; stroke: #26203A; stroke-width: 1.5; rx: 16; }
+      .card-accent { fill: #0D0B18; stroke: url(#geassGrad); stroke-width: 1.8; rx: 16; }
+    </style>
+  </defs>
+
+  <!-- Master Board Background -->
+  <rect width="1920" height="1280" fill="url(#bgGrad)"/>
+
+  <!-- Subtle Architectural Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="0" y1="120" x2="1920" y2="120"/>
+    <line x1="0" y1="560" x2="1920" y2="560"/>
+    <line x1="0" y1="920" x2="1920" y2="920"/>
+    <line x1="640" y1="0" x2="640" y2="1280"/>
+    <line x1="1280" y1="0" x2="1280" y2="1280"/>
+  </g>
+
+  <!-- Header Banner -->
+  <rect x="48" y="32" width="1824" height="72" class="card-accent"/>
+  <text x="80" y="75" class="title" font-size="24">MAHI AL NAHIN (CAPTAINNAHIN) — AWWWARDS SOTD FIGMA MASTER DESIGN SYSTEM BOARD</text>
+  <text x="1430" y="73" class="gold" font-size="14">23.85° N, 88.81° E // GANGNI, BD // v2026.11</text>
+
+  <!-- SECTION 1: COLOR PALETTE & DESIGN TOKENS -->
+  <g transform="translate(48, 132)">
+    <rect width="560" height="396" class="card"/>
+    <text x="28" y="42" class="violet" font-size="13">01 // EDITORIAL OBSIDIAN &amp; IMPERIAL GEASS PALETTE</text>
+    <text x="28" y="72" class="title" font-size="22">Design Tokens &amp; Chromatic System</text>
+
+    <!-- Swatch 1: Void Black -->
+    <rect x="28" y="96" width="92" height="92" rx="12" fill="#050508" stroke="#334155"/>
+    <text x="28" y="210" class="title" font-size="14">Void Black</text>
+    <text x="28" y="228" class="mono">#050508</text>
+
+    <!-- Swatch 2: Alabaster -->
+    <rect x="134" y="96" width="92" height="92" rx="12" fill="#F4F4F6"/>
+    <text x="134" y="210" class="title" font-size="14">Alabaster</text>
+    <text x="134" y="228" class="mono">#F4F4F6</text>
+
+    <!-- Swatch 3: Geass Violet -->
+    <rect x="240" y="96" width="92" height="92" rx="12" fill="#7B2CBF"/>
+    <text x="240" y="210" class="title" font-size="14">Geass Violet</text>
+    <text x="240" y="228" class="mono">#7B2CBF</text>
+
+    <!-- Swatch 4: Cyber Cyan -->
+    <rect x="346" y="96" width="92" height="92" rx="12" fill="#00F0FF"/>
+    <text x="346" y="210" class="title" font-size="14">Cyber Cyan</text>
+    <text x="346" y="228" class="mono">#00F0FF</text>
+
+    <!-- Swatch 5: Imperial Gold -->
+    <rect x="452" y="96" width="80" height="92" rx="12" fill="#D4AF37"/>
+    <text x="452" y="210" class="title" font-size="14">Imperial Gold</text>
+    <text x="452" y="228" class="mono">#D4AF37</text>
+
+    <!-- Typography Specs -->
+    <line x1="28" y1="254" x2="532" y2="254" stroke="#1E293B"/>
+    <text x="28" y="284" class="gold" font-size="13">TYPOGRAPHY &amp; MOTION ARCHITECTURE</text>
+    <text x="28" y="312" class="body">• Display Kinetic: Syne / Space Grotesk (700–800, Split-Text Stagger)</text>
+    <text x="28" y="338" class="body">• Editorial Sans: Plus Jakarta Sans / Inter (400–600, Optical Kerning)</text>
+    <text x="28" y="364" class="body">• Telemetry Mono: JetBrains Mono (Lenis Smooth Scroll + GSAP ScrollTrigger)</text>
+  </g>
+
+  <!-- SECTION 2: PORTRAIT MORPH ENGINE SPEC (LELOUCH <-> NAHIN) -->
+  <g transform="translate(632, 132)">
+    <rect width="624" height="396" class="card-accent"/>
+    <text x="28" y="42" class="cyan" font-size="13">02 // 60-FPS WEBGL / CANVAS DUAL-PORTRAIT REVEAL ENGINE</text>
+    <text x="28" y="72" class="title" font-size="22">PortraitMorphCanvas (1:1 Sub-Pixel Registration)</text>
+
+    <!-- Visual Diagram of Dual Portrait Stack -->
+    <rect x="28" y="96" width="260" height="200" rx="12" fill="#120D24" stroke="#7B2CBF" stroke-width="1.5"/>
+    <!-- Geass Sigil Vector inside Diagram -->
+    <path d="M90 140 L135 175 L158 152 L181 175 L226 140 L195 190 L158 215 L158 250 L158 215 L121 190 Z" stroke="#9D4EDD" stroke-width="3" fill="rgba(123,44,191,0.25)"/>
+    <circle cx="170" cy="195" r="46" stroke="#00F0FF" stroke-width="2" stroke-dasharray="6 4" fill="rgba(0,240,255,0.08)"/>
+    <circle cx="170" cy="195" r="50" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.6" fill="none"/>
+    <text x="48" y="280" class="mono" fill="#F4F4F6">r = 140px | lerp = 0.12 | 60 FPS</text>
+
+    <!-- Specs List -->
+    <text x="312" y="122" class="gold" font-size="13">INTERACTION MODES</text>
+    <text x="312" y="150" class="body">1. Desktop Spotlight: Mouse over Lelouch</text>
+    <text x="312" y="172" class="mono">   reveals Nahin via organic liquid mask</text>
+    <text x="312" y="202" class="body">2. Mobile Touch &amp; Drag: Touch/drag across</text>
+    <text x="312" y="224" class="mono">   Nahin reveals Lelouch + Tap Shockwave</text>
+    <text x="312" y="254" class="body">3. ScrollTrigger Parallax: 0% → 100%</text>
+    <text x="312" y="276" class="mono">   morph blend with 3D perspective tilt</text>
+
+    <rect x="28" y="314" width="568" height="58" rx="10" fill="#07070C" stroke="#26203A"/>
+    <text x="46" y="348" class="mono" fill="#00F0FF">Assets: assets/lelouch.png (1080x810) ⟷ assets/nahin.png (1080x810) [1:1 Locked]</text>
+  </g>
+
+  <!-- SECTION 3: DUAL-VIEW MODE ARCHITECTURE -->
+  <g transform="translate(1280, 132)">
+    <rect width="592" height="396" class="card"/>
+    <text x="28" y="42" class="gold" font-size="13">03 // DUAL HIGH-STAKES AUDIENCE ENGINE</text>
+    <text x="28" y="72" class="title" font-size="22">Client ROI Mode vs. Haileybury STEM Mode</text>
+
+    <rect x="28" y="96" width="536" height="128" rx="12" fill="#0A121E" stroke="#00F0FF" stroke-opacity="0.5"/>
+    <text x="48" y="126" class="cyan" font-size="14">[MODE 01] AGENCY &amp; B2B CLIENT VIEW ($500–$2,500)</text>
+    <text x="48" y="154" class="body">• PrimeNself Studio: $500 48-Hr B2B Redesign ($0 Upfront Preview)</text>
+    <text x="48" y="178" class="body">• Google Omni 1.1 + 8s Veo 3.1 Video Pitch + Composio MCP Engine</text>
+    <text x="48" y="202" class="body">• Antigravity Creator Studio (Notion/Sheets) &amp; StylishAura POD</text>
+
+    <rect x="28" y="240" width="536" height="128" rx="12" fill="#130B24" stroke="#9D4EDD" stroke-opacity="0.6"/>
+    <text x="48" y="270" class="violet" font-size="14">[MODE 02] HAILEYBURY BHALUKA &amp; CAMBRIDGE STEM VIEW</text>
+    <text x="48" y="298" class="body">• Bio-Computing: DishBrain Organoids, HD-MEA, LTP &amp; Hebbian Plasticity</text>
+    <text x="48" y="322" class="body">• AuroraOS Kernel/VFS, Small LLM Optimization &amp; AuraQuant v5 Math</text>
+    <text x="48" y="346" class="body">• Bangladesh Math Olympiad (BdMO), NASA STEM &amp; Mind Palace Loci</text>
+  </g>
+
+  <!-- SECTION 4: FLAGSHIP ENGINEERING & LIVE GITHUB BENTO WIREFRAME -->
+  <g transform="translate(48, 556)">
+    <rect width="1824" height="340" class="card"/>
+    <text x="28" y="42" class="cyan" font-size="13">04 // FLAGSHIP SYSTEMS &amp; LIVE GITHUB REPOSITORY ARCHITECTURE</text>
+    <text x="28" y="72" class="title" font-size="22">6 Core Production Pillars + Live GitHub REST API Sync (CaptainNahin &amp; NahinKilled)</text>
+
+    <!-- 6 Pillar Boxes -->
+    <g transform="translate(28, 96)">
+      <rect width="280" height="212" rx="12" fill="#080B14" stroke="#7B2CBF"/>
+      <text x="20" y="34" class="gold">01 // AURAQUANT v5 APEX</text>
+      <text x="20" y="62" class="body">TradingView Pine Script v5</text>
+      <text x="20" y="84" class="body">Anti-Chop ADX/Chop Filter</text>
+      <text x="20" y="106" class="body">Dynamic Ratcheted ATR Stop</text>
+      <text x="20" y="128" class="body">+ QuantEdge Vercel Gateway</text>
+      <text x="20" y="184" class="mono">github.com/CaptainNahin/Trading-bot</text>
+    </g>
+
+    <g transform="translate(324, 96)">
+      <rect width="280" height="212" rx="12" fill="#080B14" stroke="#00F0FF"/>
+      <text x="20" y="34" class="cyan">02 // LIGHTWEIGHT OS</text>
+      <text x="20" y="62" class="body">AuroraOS Desktop Env (5★)</text>
+      <text x="20" y="84" class="body">Low-RAM Virtual Workspaces</text>
+      <text x="20" y="106" class="body">Sandboxed VFS Inode Layer</text>
+      <text x="20" y="128" class="body">Bare-Metal Linux Roadmap</text>
+      <text x="20" y="184" class="mono">github.com/CaptainNahin/AuroraOS</text>
+    </g>
+
+    <g transform="translate(620, 96)">
+      <rect width="280" height="212" rx="12" fill="#080B14" stroke="#D4AF37"/>
+      <text x="20" y="34" class="gold">03 // SMALL LLM (SLM)</text>
+      <text x="20" y="62" class="body">Local Execution Optimization</text>
+      <text x="20" y="84" class="body">4-Bit QLoRA Quantization</text>
+      <text x="20" y="106" class="body">Low-Latency Edge Inference</text>
+      <text x="20" y="128" class="body">Termux ARM64 Runtime</text>
+      <text x="20" y="184" class="mono">Edge AI &amp; Agent Swarm</text>
+    </g>
+
+    <g transform="translate(916, 96)">
+      <rect width="280" height="212" rx="12" fill="#080B14" stroke="#7B2CBF"/>
+      <text x="20" y="34" class="violet">04 // PRIMENSELF STUDIO</text>
+      <text x="20" y="62" class="body">$500 48-Hr B2B Web Builds</text>
+      <text x="20" y="84" class="body">Google Omni Psychologist</text>
+      <text x="20" y="106" class="body">8s Veo 3.1 Video Previews</text>
+      <text x="20" y="128" class="body">Composio MCP Automation</text>
+      <text x="20" y="184" class="mono">Zero-Risk $0 Upfront Offer</text>
+    </g>
+
+    <g transform="translate(1212, 96)">
+      <rect width="280" height="212" rx="12" fill="#080B14" stroke="#00F0FF"/>
+      <text x="20" y="34" class="cyan">05 // ANTIGRAVITY STUDIO</text>
+      <text x="20" y="62" class="body">Creator Notion Ecosystems</text>
+      <text x="20" y="84" class="body">Quantitative Google Sheets</text>
+      <text x="20" y="106" class="body">StylishAura POD (Printify)</text>
+      <text x="20" y="128" class="body">DocNworld AI Telemedicine</text>
+      <text x="20" y="184" class="mono">Creator &amp; SaaS Ventures</text>
+    </g>
+
+    <g transform="translate(1508, 96)">
+      <rect width="288" height="212" rx="12" fill="#080B14" stroke="#D4AF37"/>
+      <text x="20" y="34" class="gold">06 // 32-CORE CLOUD RENDER</text>
+      <text x="20" y="62" class="body">Termux → GCP E2_HIGHCPU_32</text>
+      <text x="20" y="84" class="body">16-Way Parallel Remotion</text>
+      <text x="20" y="106" class="body">Headless Blender 3D Rigging</text>
+      <text x="20" y="128" class="body">20-Min 100-Scene Episodes</text>
+      <text x="20" y="184" class="mono">quantedge-worker-prod</text>
+    </g>
+  </g>
+
+  <!-- SECTION 5: POLYMATH, BIO-COMPUTING, STRATEGY & WINTER ARC BENTO -->
+  <g transform="translate(48, 924)">
+    <rect width="1824" height="312" class="card-accent"/>
+    <text x="28" y="42" class="gold" font-size="13">05 // POLYMATH, COMPUTATIONAL NEUROSCIENCE &amp; WINTER ARC DISCIPLINE BENTO</text>
+    <text x="28" y="72" class="title" font-size="22">Bio-Computing (DishBrain/HD-MEA) • Cognitive Psychology • HollowNbeats • Winter Rain Boxing</text>
+
+    <g transform="translate(28, 96)">
+      <rect width="420" height="184" rx="12" fill="#0B0916" stroke="#9D4EDD"/>
+      <text x="20" y="34" class="violet">BIO-COMPUTING &amp; WETWARE</text>
+      <text x="20" y="62" class="body">• DishBrain Organoid Neural Feedback Loops</text>
+      <text x="20" y="86" class="body">• High-Density Multielectrode Arrays (HD-MEA)</text>
+      <text x="20" y="110" class="body">• Long-Term Potentiation (LTP) &amp; Hebbian</text>
+      <text x="20" y="134" class="mono">  Synaptic Plasticity: Δw_ij = η · x_i · y_j</text>
+    </g>
+
+    <g transform="translate(468, 96)">
+      <rect width="420" height="184" rx="12" fill="#0B0916" stroke="#00F0FF"/>
+      <text x="20" y="34" class="cyan">COGNITIVE PSYCH &amp; STEM</text>
+      <text x="20" y="62" class="body">• Mind Palace (Method of Loci) &amp; Visual Mapping</text>
+      <text x="20" y="86" class="body">• Wegner's Ironic Process Theory Counter-Control</text>
+      <text x="20" y="110" class="body">• Bangladesh Math Olympiad (BdMO) Competitor</text>
+      <text x="20" y="134" class="body">• NASA STEM Gateway Member</text>
+    </g>
+
+    <g transform="translate(908, 96)">
+      <rect width="430" height="184" rx="12" fill="#0B0916" stroke="#D4AF37"/>
+      <text x="20" y="34" class="gold">HOLLOWNBEATS &amp; STRATEGY</text>
+      <text x="20" y="62" class="body">• Original Music: "দরজার ওপাশে" &amp; "Two Dimensional Heart"</text>
+      <text x="20" y="86" class="body">• Psychological Thriller Screenwriting (Lelouch,</text>
+      <text x="20" y="110" class="body">  Johan Liebert, Light Yagami, Ayanokoji Archetypes)</text>
+      <text x="20" y="134" class="body">• Football Analytics: Messi vs. Ronaldo Per-90 Study</text>
+    </g>
+
+    <g transform="translate(1358, 96)">
+      <rect width="438" height="184" rx="12" fill="#0B0916" stroke="#10B981"/>
+      <text x="20" y="34" class="cyan" fill="#10B981">WINTER ARC &amp; RESILIENCE</text>
+      <text x="20" y="62" class="body">• Laptop Stolen → Built Termux + 32-Core Cloud OS</text>
+      <text x="20" y="86" class="body">• Winter Rain Boxing, Calisthenics &amp; Dawn Running</text>
+      <text x="20" y="110" class="body">• Termux Wakelock Daemon (discipline_guardian.py)</text>
+      <text x="20" y="134" class="body">• 1-Click Printable Haileybury &amp; Client PDF Dossier</text>
+    </g>
+  </g>
+</svg>
